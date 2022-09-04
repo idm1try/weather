@@ -1,5 +1,4 @@
 import { Box, Input, InputGroup, InputLeftElement } from '@chakra-ui/react';
-import { useState } from 'react';
 import { FaSearch } from 'react-icons/fa';
 
 export default function Search() {
