@@ -1,10 +1,9 @@
-import { Box, Heading } from '@chakra-ui/react';
-import React from 'react';
+import { Box, Text } from '@chakra-ui/react';
 
 const Forecast = () => {
   return (
     <Box>
-      <Heading>Hello from Forecast.tsx</Heading>
+      <Text>Hello from Forecast.tsx</Text>
     </Box>
   );
 };
