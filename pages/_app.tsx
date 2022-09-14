@@ -1,5 +1,5 @@
-import Layout from '../components/layout';
-import Chakra from '../components/chakra';
+import Layout from '../components/Layout';
+import Chakra from '../components/Chakra';
 import { motion } from 'framer-motion';
 import type { AppProps } from 'next/app';
 

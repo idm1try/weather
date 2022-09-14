@@ -13,9 +13,9 @@ import {
   useDisclosure,
 } from '@chakra-ui/react';
 import { FaGithub, FaSearch } from 'react-icons/fa';
-import Logo from './logo';
-import Search from './search';
-import ThemeToggleButton from './themeToggleButton';
+import Logo from './Logo';
+import Search from './Search';
+import ThemeToggleButton from './ThemeToggleButton';
 
 const Navbar = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();

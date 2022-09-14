@@ -1,4 +1,4 @@
-export type WeatherResponse = {
+export interface WeatherResponse {
   coord: {
     lon: number;
     lat: number;
@@ -40,13 +40,13 @@ export type WeatherResponse = {
   timezone: number;
   id: number;
   name: string;
-  cod: number;
-};
+  cod: number & string;
+}
 
-export type WeatherData = {
+export interface WeatherData {
   weather: WeatherResponse;
   isLoading: boolean;
   isError: boolean;
   location: string;
   setLocation: (string) => void;
-};
+}

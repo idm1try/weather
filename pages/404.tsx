@@ -1,5 +1,5 @@
+import { Box, Button, Heading, Text, useColorModeValue } from '@chakra-ui/react';
 import NextLink from 'next/link';
-import { Box, Heading, Text, Button, useColorModeValue } from '@chakra-ui/react';
 import { FaHome } from 'react-icons/fa';
 
 const NotFound = () => {

@@ -1,12 +1,12 @@
 import Head from 'next/head';
 import { Box, Container } from '@chakra-ui/react';
-import Footer from './footer';
+import Footer from './Footer';
 import { ReactNode } from 'react';
-import Navbar from './navbar';
+import Navbar from './Navbar';
 
-type Props = {
+interface Props {
   children: ReactNode;
-};
+}
 
 const Main = ({ children }: Props) => {
   return (

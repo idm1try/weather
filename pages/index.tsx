@@ -1,4 +1,7 @@
 import { Box, Center, Heading, Spinner } from '@chakra-ui/react';
+import CityNotFound from '../components/CityNotFound';
+import Forecast from '../components/Forecast';
+import CurrentConditions from '../components/CurrentConditions';
 import useWeather from '../lib/useWeather';
 
 const Home = () => {
@@ -8,11 +11,24 @@ const Home = () => {
     <Box mt={5}>
       {isLoading ? (
         <Center>
-          <Spinner />
+          <Spinner size='xl' my={5} />
         </Center>
       ) : (
         <Box>
-          {!weather.main ? <Heading>Failed to load</Heading> : <Heading>{weather.name}</Heading>}
+          {weather.cod == '404' ? (
+            <CityNotFound />
+          ) : (
+            <Box>
+              {weather.main ? (
+                <Box>
+                  <CurrentConditions />
+                  <Forecast />
+                </Box>
+              ) : (
+                <Heading textAlign='center'>Enter City</Heading>
+              )}
+            </Box>
+          )}
         </Box>
       )}
     </Box>
@@ -20,4 +36,4 @@ const Home = () => {
 };
 
 export default Home;
-export { getServerSideProps } from '../components/chakra';
+export { getServerSideProps } from '../components/Chakra';
