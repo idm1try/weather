@@ -4,9 +4,9 @@ import Footer from './footer';
 import { ReactNode } from 'react';
 import Navbar from './navbar';
 
-interface Props {
+type Props = {
   children: ReactNode;
-}
+};
 
 const Main = ({ children }: Props) => {
   return (

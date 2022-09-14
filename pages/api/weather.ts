@@ -8,7 +8,7 @@ async function Weather(req: NextApiRequest, res: NextApiResponse) {
   }
 
   try {
-    const baseUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${req?.query?.location}&appid=${process.env.WEATHER_API_KEY}`;
+    const baseUrl = `https://api.openweathermap.org/data/2.5/weather?q=${req?.query?.location}&units=metric&appid=${process.env.WEATHER_API_KEY}`;
 
     const weather = await fetch(baseUrl);
     const forecast = await weather.json();
@@ -19,7 +19,6 @@ async function Weather(req: NextApiRequest, res: NextApiResponse) {
       return res.status(500).json({ message: 'Cannot fetch weather data.' });
     }
   } catch (error) {
-    console.error(error);
     return res.status(500).json({ message: error });
   }
 }

@@ -44,13 +44,15 @@ const Navbar = () => {
 
         <Box flex={1} textAlign='right' mr={3}>
           <ThemeToggleButton />
-          <IconButton
-            as='a'
-            href='https://github.com/idm1try/weather-nextjs'
-            icon={<FaGithub />}
-            aria-label='source'
-            ml={3}
-          />
+          <Hide breakpoint='(max-width: 315px)'>
+            <IconButton
+              as='a'
+              href='https://github.com/idm1try/weather-nextjs'
+              icon={<FaGithub />}
+              aria-label='source'
+              ml={3}
+            />
+          </Hide>
           <Show breakpoint='(max-width: 600px)'>
             <IconButton icon={<FaSearch />} aria-label='search' onClick={onOpen} ml={3} />
           </Show>
@@ -59,7 +61,7 @@ const Navbar = () => {
               bg={useColorModeValue('#F7FAFC80', '#17192380')}
               backdropFilter='blur(10px)'
             />
-            <ModalContent maxW='20rem'>
+            <ModalContent mx={5}>
               <Search />
             </ModalContent>
           </Modal>
