@@ -1,5 +1,5 @@
 import { Box, Container, IconButton } from '@chakra-ui/react';
-import { useScrollIntoView, useWindowScroll } from '@mantine/hooks';
+import { useWindowScroll } from '@mantine/hooks';
 import Head from 'next/head';
 import { ReactNode } from 'react';
 import { TbArrowUp } from 'react-icons/tb';
@@ -11,11 +11,10 @@ interface Props {
 }
 
 const Main = ({ children }: Props) => {
-  const { scrollIntoView, targetRef } = useScrollIntoView<HTMLDivElement>();
   const [scroll, scrollTo] = useWindowScroll();
 
   return (
-    <Box as='main' pb={8} ref={targetRef}>
+    <Box as='main' pb={8}>
       <Head>
         <title>Weather</title>
         <meta name='viewport' content='width=device-width, initial-scale=1' />

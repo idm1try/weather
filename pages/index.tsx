@@ -10,9 +10,9 @@ const Home = () => {
   const spinnerColor = useColorModeValue('teal.500', 'teal.200');
 
   return (
-    <Box mt={5}>
+    <Box>
       {isLoading ? (
-        <Center height='76vh'>
+        <Center height={{ base: '65vh', md: '76vh' }}>
           <Spinner color={spinnerColor} thickness='4px' speed='0.65s' size='xl' />
         </Center>
       ) : (
@@ -20,7 +20,7 @@ const Home = () => {
           {weather.cod == '404' ? (
             <CityNotFound />
           ) : (
-            <Box>
+            <Box mt={5}>
               {!weather.message ? (
                 <Box>
                   <CurrentConditions />
