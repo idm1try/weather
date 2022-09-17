@@ -37,7 +37,11 @@ const CurrentConditions = () => {
               <Text fontWeight='bold' fontSize='lg'>
                 Feels Like: {formatTemperature(units, weather.main.feels_like)}
               </Text>
-              <Text fontSize='lg' textColor='gray.500'>
+              <Text
+                fontSize='lg'
+                textColor='gray.500'
+                display={weather.main.temp_max == weather.main.temp_min ? 'none' : 'block'}
+              >
                 High: {formatTemperature(units, weather.main.temp_max)} Low:{' '}
                 {formatTemperature(units, weather.main.temp_min)}
               </Text>
