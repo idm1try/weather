@@ -34,7 +34,16 @@ const CurrentConditions = () => {
               <Heading size='4xl' color={headingColor} lineHeight='normal'>
                 {formatTemperature(units, weather.main.temp)}
               </Heading>
-              <Text fontWeight='bold' fontSize='lg'>
+              <Text
+                fontWeight='bold'
+                fontSize='lg'
+                display={
+                  formatTemperature(units, weather.main.feels_like) ==
+                  formatTemperature(units, weather.main.temp)
+                    ? 'none'
+                    : 'block'
+                }
+              >
                 Feels Like: {formatTemperature(units, weather.main.feels_like)}
               </Text>
               <Text
