@@ -1,25 +1,27 @@
-import { Box, Center, Heading, Spinner } from '@chakra-ui/react';
+import { Box, Center, Heading, Spinner, useColorModeValue } from '@chakra-ui/react';
+import Animate from '../components/Animate';
 import CityNotFound from '../components/CityNotFound';
-import Forecast from '../components/Forecast';
 import CurrentConditions from '../components/CurrentConditions';
+import Forecast from '../components/Forecast';
 import useWeather from '../lib/useWeather';
 
 const Home = () => {
-  const { weather, isLoading } = useWeather();
+  const { isLoading, weather } = useWeather();
+  const spinnerColor = useColorModeValue('teal.500', 'teal.200');
 
   return (
     <Box mt={5}>
       {isLoading ? (
-        <Center>
-          <Spinner size='xl' my={5} />
+        <Center height='76vh'>
+          <Spinner color={spinnerColor} thickness='4px' speed='0.65s' size='xl' />
         </Center>
       ) : (
-        <Box>
+        <Animate>
           {weather.cod == '404' ? (
             <CityNotFound />
           ) : (
             <Box>
-              {weather.main ? (
+              {!weather.message ? (
                 <Box>
                   <CurrentConditions />
                   <Forecast />
@@ -29,7 +31,7 @@ const Home = () => {
               )}
             </Box>
           )}
-        </Box>
+        </Animate>
       )}
     </Box>
   );

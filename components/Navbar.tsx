@@ -3,22 +3,33 @@ import {
   Container,
   Flex,
   Heading,
-  Hide,
   IconButton,
+  Menu,
+  MenuButton,
+  MenuItem,
+  MenuList,
   Modal,
   ModalContent,
   ModalOverlay,
-  Show,
+  useColorMode,
   useColorModeValue,
   useDisclosure,
 } from '@chakra-ui/react';
-import { FaGithub, FaSearch } from 'react-icons/fa';
+import { TbSearch, TbDotsVertical, TbBrandGithub } from 'react-icons/tb';
+import useWeather from '../lib/useWeather';
 import Logo from './Logo';
 import Search from './Search';
+import TempUnitToggleButton from './TempUnitToggleButton';
 import ThemeToggleButton from './ThemeToggleButton';
 
 const Navbar = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
+  const { toggleColorMode } = useColorMode();
+  const { units, setUnits } = useWeather();
+
+  function toggleUnits() {
+    setUnits(units == 'us' ? 'metric' : 'us');
+  }
 
   return (
     <Box
@@ -37,40 +48,49 @@ const Navbar = () => {
         justifyContent='space-between'
       >
         <Flex align='center' mr={5}>
-          <Heading as='h1' ml={3} size='lg' letterSpacing={'tighter'}>
+          <Heading as='h1' ml={3} size='lg' letterSpacing='tighter'>
             <Logo />
           </Heading>
         </Flex>
-
-        <Box flex={1} textAlign='right' mr={3}>
+        <Box flex={1} textAlign='right' mr={3} display={{ base: 'none', md: 'inline-block' }}>
           <ThemeToggleButton />
-          <Hide breakpoint='(max-width: 315px)'>
-            <IconButton
-              as='a'
-              href='https://github.com/idm1try/weather-nextjs'
-              icon={<FaGithub />}
-              aria-label='source'
-              ml={3}
-            />
-          </Hide>
-          <Show breakpoint='(max-width: 600px)'>
-            <IconButton icon={<FaSearch />} aria-label='search' onClick={onOpen} ml={3} />
-          </Show>
-          <Modal isOpen={isOpen} onClose={onClose} size='sm'>
-            <ModalOverlay
-              bg={useColorModeValue('#F7FAFC80', '#17192380')}
-              backdropFilter='blur(10px)'
-            />
-            <ModalContent mx={5}>
-              <Search />
-            </ModalContent>
-          </Modal>
-        </Box>
-        <Hide breakpoint='(max-width: 600px)'>
-          <Box mr={3}>
-            <Search />
+          <TempUnitToggleButton />
+          <IconButton
+            as='a'
+            href='https://github.com/idm1try/weather-nextjs'
+            aria-label='Source Code'
+            icon={<TbBrandGithub />}
+            ml={3}
+          />
+          <Box display={{ base: 'inline-block', md: 'none' }}>
+            <IconButton icon={<TbSearch />} aria-label='search' onClick={onOpen} ml={3} />
           </Box>
-        </Hide>
+        </Box>
+        <Box mr={3} display={{ base: 'none', md: 'inline-block' }}>
+          <Search />
+        </Box>
+        <Modal isOpen={isOpen} onClose={onClose} size='sm'>
+          <ModalOverlay
+            bg={useColorModeValue('#F7FAFC80', '#17192380')}
+            backdropFilter='blur(10px)'
+          />
+          <ModalContent mx={5}>
+            <Search />
+          </ModalContent>
+        </Modal>
+        <Box ml={2} display={{ base: 'inline-block', md: 'none' }}>
+          <IconButton icon={<TbSearch />} aria-label='search' onClick={onOpen} mr={3} />
+          <Menu isLazy id='navbar-menu'>
+            <MenuButton as={IconButton} icon={<TbDotsVertical />} aria-label='Options' />
+            <MenuList>
+              <MenuItem onClick={toggleColorMode}>Toggle Theme</MenuItem>
+              <MenuItem onClick={toggleUnits}>Toggle Units</MenuItem>
+              <MenuItem as='a' href='https://github.com/idm1try/weather-nextjs'>
+                Source Code
+              </MenuItem>
+            </MenuList>
+          </Menu>
+        </Box>
       </Container>
     </Box>
   );

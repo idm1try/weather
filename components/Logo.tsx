@@ -1,7 +1,7 @@
-import { Box, Text, useColorModeValue } from '@chakra-ui/react';
-import { WiDaySunny } from 'react-icons/wi';
+import { Icon, Text, useColorModeValue } from '@chakra-ui/react';
 import styled from '@emotion/styled';
 import Link from 'next/link';
+import { TbSun } from 'react-icons/tb';
 
 const LogoBox = styled.span`
   display: inline-flex;
@@ -20,7 +20,7 @@ const Logo = () => {
     <Link href='/'>
       <a>
         <LogoBox>
-          <Box as={WiDaySunny} mt={1} />
+          <Icon as={TbSun} mt={1} />
           <Text color={useColorModeValue('gray.800', 'whiteAlpha.900')} fontWeight='bold'>
             Weather
           </Text>

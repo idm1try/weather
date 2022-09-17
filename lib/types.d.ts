@@ -41,6 +41,7 @@ export interface WeatherResponse {
   id: number;
   name: string;
   cod: number & string;
+  message: string;
 }
 
 export interface WeatherData {
@@ -49,4 +50,6 @@ export interface WeatherData {
   isError: boolean;
   location: string;
   setLocation: (string) => void;
+  units: string;
+  setUnits: (string) => void;
 }

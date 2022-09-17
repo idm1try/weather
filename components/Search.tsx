@@ -1,15 +1,7 @@
-import {
-  Box,
-  Hide,
-  Input,
-  InputGroup,
-  InputLeftElement,
-  InputRightElement,
-  Kbd,
-} from '@chakra-ui/react';
+import { Box, Input, InputGroup, InputLeftElement, InputRightElement, Kbd } from '@chakra-ui/react';
 import { useHotkeys } from '@mantine/hooks';
 import { useRef } from 'react';
-import { FaSearch } from 'react-icons/fa';
+import { TbSearch } from 'react-icons/tb';
 import useWeather from '../lib/useWeather';
 
 export default function Search() {
@@ -27,19 +19,20 @@ export default function Search() {
   return (
     <Box>
       <InputGroup>
-        <InputLeftElement pointerEvents='none' children={<Box as={FaSearch} color='gray.500' />} />
+        <InputLeftElement pointerEvents='none' children={<Box as={TbSearch} color='gray.500' />} />
         <Input
           variant='filled'
           aria-label='Enter city'
           placeholder='Enter city'
           type='text'
-          value={location.toLowerCase()}
-          ref={inputRef}
+          spellCheck='false'
+          value={location}
           onChange={e => setLocation(e.target.value)}
+          ref={inputRef}
         />
-        <Hide breakpoint='(max-width: 600px)'>
+        <Box display={{ base: 'none', md: 'inline-block' }}>
           <InputRightElement pointerEvents='none' children={<Kbd>/</Kbd>} />
-        </Hide>
+        </Box>
       </InputGroup>
     </Box>
   );
