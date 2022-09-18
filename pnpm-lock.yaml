@@ -8,7 +8,7 @@ specifiers:
   '@commitlint/types': ^17.0.0
   '@emotion/react': ^11.10.4
   '@emotion/styled': ^11.10.4
-  '@mantine/hooks': ^5.3.2
+  '@mantine/hooks': ^5.3.3
   '@types/node': 18.7.9
   '@types/react': 18.0.17
   '@types/react-dom': 18.0.6
@@ -36,7 +36,7 @@ dependencies:
   '@chakra-ui/styled-system': 2.3.1
   '@emotion/react': 11.10.4_roarvy33ly4edpxjner6w2fdle
   '@emotion/styled': 11.10.4_4qtvpe2rifqrvh5pltoorlxfta
-  '@mantine/hooks': 5.3.2_react@18.2.0
+  '@mantine/hooks': 5.3.3_react@18.2.0
   framer-motion: 7.3.5_biqbaboplfbrettd7655fr4n2y
   next: 12.3.0_ir3quccc6i62x6qn6jjhyjjiey
   react: 18.2.0
@@ -1676,8 +1676,8 @@ packages:
       '@jridgewell/sourcemap-codec': 1.4.14
     dev: true
 
-  /@mantine/hooks/5.3.2_react@18.2.0:
-    resolution: {integrity: sha512-vgAYobmnh52I37q/lm+mIpCbjSYxv5SuwHGzl7Ep0ww/0W+5rurZgoD/IVMhvdFO1/yeJgK+REDAZFFzfU2urw==}
+  /@mantine/hooks/5.3.3_react@18.2.0:
+    resolution: {integrity: sha512-90GD3pX7CanPHC35qxuVr7jNJBS9/bLJiofPUuqdKyW547D8RLRRNofoelQ7y2wKiaLhHC2oV1wUPOAk/6Oz8Q==}
     peerDependencies:
       react: '>=16.8.0'
     dependencies:
@@ -2284,8 +2284,8 @@ packages:
     engines: {node: ^6 || ^7 || ^8 || ^9 || ^10 || ^11 || ^12 || >=13.7}
     hasBin: true
     dependencies:
-      caniuse-lite: 1.0.30001400
-      electron-to-chromium: 1.4.253
+      caniuse-lite: 1.0.30001402
+      electron-to-chromium: 1.4.254
       node-releases: 2.0.6
       update-browserslist-db: 1.0.9_browserslist@4.21.4
     dev: false
@@ -2315,8 +2315,8 @@ packages:
     engines: {node: '>=6'}
     dev: true
 
-  /caniuse-lite/1.0.30001400:
-    resolution: {integrity: sha512-Mv659Hn65Z4LgZdJ7ge5JTVbE3rqbJaaXgW5LEI9/tOaXclfIZ8DW7D7FCWWWmWiiPS7AC48S8kf3DApSxQdgA==}
+  /caniuse-lite/1.0.30001402:
+    resolution: {integrity: sha512-Mx4MlhXO5NwuvXGgVb+hg65HZ+bhUYsz8QtDGDo2QmaJS2GBX47Xfi2koL86lc8K+l+htXeTEB/Aeqvezoo6Ew==}
     dev: false
 
   /chalk/2.4.2:
@@ -2587,8 +2587,8 @@ packages:
       is-obj: 2.0.0
     dev: true
 
-  /electron-to-chromium/1.4.253:
-    resolution: {integrity: sha512-1pezJ2E1UyBTGbA7fUlHdPSXQw1k+82VhTFLG5G0AUqLGvsZqFzleOblceqegZzxYX4kC7hGEEdzIQI9RZ1Cuw==}
+  /electron-to-chromium/1.4.254:
+    resolution: {integrity: sha512-Sh/7YsHqQYkA6ZHuHMy24e6TE4eX6KZVsZb9E/DvU1nQRIrH4BflO/4k+83tfdYvDl+MObvlqHPRICzEdC9c6Q==}
     dev: false
 
   /emoji-regex/8.0.0:
@@ -3769,7 +3769,7 @@ packages:
     dependencies:
       '@next/env': 12.3.0
       '@swc/helpers': 0.4.11
-      caniuse-lite: 1.0.30001400
+      caniuse-lite: 1.0.30001402
       postcss: 8.4.14
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
