@@ -10,9 +10,10 @@ import {
   Text,
   useColorModeValue,
 } from '@chakra-ui/react';
-import { TbWind, TbDroplet, TbSunrise, TbSunset, TbSun } from 'react-icons/tb';
+import { TbDroplet, TbSunrise, TbSunset, TbWind } from 'react-icons/tb';
 import { formatSpeed, formatTemperature, formatTime } from '../lib/formatters';
 import useWeather from '../lib/useWeather';
+import WeatherIcon from './WeatherIcon';
 
 const CurrentConditions = () => {
   const { isLoading, weather, units } = useWeather();
@@ -49,14 +50,19 @@ const CurrentConditions = () => {
               <Text
                 fontSize='lg'
                 textColor='gray.500'
-                display={weather.main.temp_max == weather.main.temp_min ? 'none' : 'block'}
+                display={
+                  formatTemperature(units, weather.main.temp_max) ==
+                  formatTemperature(units, weather.main.temp_min)
+                    ? 'none'
+                    : 'block'
+                }
               >
                 High: {formatTemperature(units, weather.main.temp_max)} Low:{' '}
                 {formatTemperature(units, weather.main.temp_min)}
               </Text>
             </Box>
             <Box w='50%' fontSize='lg' textAlign='right'>
-              <Icon as={TbSun} h={128} w={128} />
+              <WeatherIcon size={128} variant={weather.weather[0].icon} />
             </Box>
           </HStack>
           <Stack bgColor={stackColor} p={3} my={5} borderRadius='md'>

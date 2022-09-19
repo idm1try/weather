@@ -15,7 +15,7 @@ import {
   useColorModeValue,
   useDisclosure,
 } from '@chakra-ui/react';
-import { TbSearch, TbDotsVertical, TbBrandGithub } from 'react-icons/tb';
+import { TbSearch, TbBrandGithub, TbMenu2 } from 'react-icons/tb';
 import useWeather from '../lib/useWeather';
 import Logo from './Logo';
 import Search from './Search';
@@ -81,7 +81,7 @@ const Navbar = () => {
         <Box ml={2} display={{ base: 'inline-block', md: 'none' }}>
           <IconButton icon={<TbSearch />} aria-label='search' onClick={onOpen} mr={3} />
           <Menu isLazy id='navbar-menu'>
-            <MenuButton as={IconButton} icon={<TbDotsVertical />} aria-label='Options' />
+            <MenuButton as={IconButton} icon={<TbMenu2 />} aria-label='Options' />
             <MenuList>
               <MenuItem onClick={toggleColorMode}>Toggle Theme</MenuItem>
               <MenuItem onClick={toggleUnits}>Toggle Units</MenuItem>

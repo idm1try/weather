@@ -2,7 +2,7 @@ import { Box, Heading, Text, useColorModeValue } from '@chakra-ui/react';
 
 const CityNotFound = () => {
   return (
-    <Box textAlign='center'>
+    <Box textAlign='center' mt={5}>
       <Heading
         display='inline-block'
         as='h2'
