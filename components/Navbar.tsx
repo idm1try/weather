@@ -20,7 +20,7 @@ import useWeather from '../lib/useWeather';
 import Logo from './Logo';
 import Search from './Search';
 import ThemeToggleButton from './ThemeToggleButton';
-import TempUnitToggleButton from './UnitsToggleButton';
+import UnitsToggleButton from './UnitsToggleButton';
 
 const Navbar = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -54,7 +54,7 @@ const Navbar = () => {
         </Flex>
         <Box flex={1} textAlign='right' mr={3} display={{ base: 'none', md: 'inline-block' }}>
           <ThemeToggleButton />
-          <TempUnitToggleButton />
+          <UnitsToggleButton />
           <IconButton
             as='a'
             href='https://github.com/idm1try/weather-nextjs'

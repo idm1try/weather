@@ -4,7 +4,7 @@ import { AnimatePresence, motion } from 'framer-motion';
 import { TbTemperatureCelsius, TbTemperatureFahrenheit } from 'react-icons/tb';
 import useWeather from '../lib/useWeather';
 
-const TempUnitToggleButton = () => {
+const UnitsToggleButton = () => {
   const { units, setUnits } = useWeather();
 
   function toggleUnits() {
@@ -34,4 +34,4 @@ const TempUnitToggleButton = () => {
   );
 };
 
-export default TempUnitToggleButton;
+export default UnitsToggleButton;
