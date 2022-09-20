@@ -25,7 +25,7 @@ const TempUnitToggleButton = () => {
       >
         <IconButton
           aria-label='Toggle temp unit'
-          icon={units == 'f' ? <TbTemperatureFahrenheit /> : <TbTemperatureCelsius />}
+          icon={units == 'us' ? <TbTemperatureFahrenheit /> : <TbTemperatureCelsius />}
           onClick={toggleUnits}
           ml={3}
         />

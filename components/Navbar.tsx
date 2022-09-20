@@ -15,12 +15,12 @@ import {
   useColorModeValue,
   useDisclosure,
 } from '@chakra-ui/react';
-import { TbSearch, TbBrandGithub, TbMenu2 } from 'react-icons/tb';
+import { TbBrandGithub, TbMenu2, TbSearch } from 'react-icons/tb';
 import useWeather from '../lib/useWeather';
 import Logo from './Logo';
 import Search from './Search';
-import TempUnitToggleButton from './TempUnitToggleButton';
 import ThemeToggleButton from './ThemeToggleButton';
+import TempUnitToggleButton from './UnitsToggleButton';
 
 const Navbar = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
