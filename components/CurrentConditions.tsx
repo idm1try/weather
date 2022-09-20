@@ -35,31 +35,19 @@ const CurrentConditions = () => {
               <Heading size='4xl' color={headingColor} lineHeight='normal'>
                 {formatTemperature(units, weather.main.temp)}
               </Heading>
-              <Text
-                fontWeight='bold'
-                fontSize='lg'
-                display={
-                  formatTemperature(units, weather.main.feels_like) ==
-                  formatTemperature(units, weather.main.temp)
-                    ? 'none'
-                    : 'block'
-                }
-              >
-                Feels Like: {formatTemperature(units, weather.main.feels_like)}
-              </Text>
-              <Text
-                fontSize='lg'
-                textColor='gray.500'
-                display={
-                  formatTemperature(units, weather.main.temp_max) ==
-                  formatTemperature(units, weather.main.temp_min)
-                    ? 'none'
-                    : 'block'
-                }
-              >
-                High: {formatTemperature(units, weather.main.temp_max)} Low:{' '}
-                {formatTemperature(units, weather.main.temp_min)}
-              </Text>
+              {formatTemperature(units, weather.main.feels_like) !=
+                formatTemperature(units, weather.main.temp) && (
+                <Text fontWeight='bold' fontSize='lg'>
+                  Feels Like: {formatTemperature(units, weather.main.feels_like)}
+                </Text>
+              )}
+              {formatTemperature(units, weather.main.temp_max) !=
+                formatTemperature(units, weather.main.temp_min) && (
+                <Text fontSize='lg' textColor='gray.500'>
+                  High: {formatTemperature(units, weather.main.temp_max)} Low:{' '}
+                  {formatTemperature(units, weather.main.temp_min)}
+                </Text>
+              )}
             </Box>
             <Box w='50%' fontSize='lg' textAlign='right' display={{ base: 'none', sm: 'block' }}>
               <WeatherIcon size={128} variant={weather.weather[0].icon} />

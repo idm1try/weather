@@ -21,17 +21,14 @@ const Forecast = () => {
                   <Text fontWeight='bold' textTransform='capitalize'>
                     {forecast.weather[0].description}
                   </Text>
-                  <Text
-                    color='gray.500'
-                    display={
-                      formatTemperature(units, forecast.main.feels_like) ==
-                      formatTemperature(units, forecast.main.temp)
-                        ? 'none'
-                        : 'block'
-                    }
-                  >
-                    Feels Like: {formatTemperature(units, forecast.main.feels_like)}
-                  </Text>
+                  {formatTemperature(units, forecast.main.feels_like) !=
+                  formatTemperature(units, forecast.main.temp) ? (
+                    <Text color='gray.500'>
+                      Feels Like: {formatTemperature(units, forecast.main.feels_like)}
+                    </Text>
+                  ) : (
+                    <br />
+                  )}
                 </GridItem>
               );
             })
