@@ -16,31 +16,10 @@ export function formatSpeed(speedUnit: string, speed: number) {
   }).format(Math.round(speeds));
 }
 
-export function formatDay(day: number, index: number): string {
-  const now = new Date();
-
-  const today = new Intl.DateTimeFormat('en-US', { weekday: 'long' }).format(now);
-
-  const tomorrow = new Intl.DateTimeFormat('en-US', { weekday: 'long' }).format(
-    now.setDate(now.getDate() + 1)
-  );
-
-  let dayOfWeek = new Intl.DateTimeFormat('en-US', { weekday: 'long' }).format(day * 1000);
-
-  if (dayOfWeek === today && index === 0) {
-    dayOfWeek = 'Today';
-  }
-
-  if (dayOfWeek === tomorrow) {
-    dayOfWeek = 'Tomorrow';
-  }
-
-  return dayOfWeek;
-}
-
 export function formatTime(format: string, time: number): string {
   return new Intl.DateTimeFormat('en-US', {
     hour: 'numeric',
+    minute: 'numeric',
     hourCycle: format === 'metric' ? 'h23' : 'h12',
   }).format(time * 1000);
 }

@@ -5,6 +5,8 @@ const config: ThemeConfig = {
   useSystemColorMode: true,
 };
 
-const theme = extendTheme({ config });
+const breakpoints = { sm: '330px', md: '768px', lg: '960px', xl: '1200px', '2xl': '1536px' };
+
+const theme = extendTheme({ config, breakpoints });
 
 export default theme;

@@ -8,7 +8,7 @@ async function Weather(req: NextApiRequest, res: NextApiResponse) {
   }
 
   try {
-    const baseUrl = `https://api.openweathermap.org/data/2.5/weather?q=${req?.query?.location}&units=metric&appid=${process.env.WEATHER_API_KEY}`;
+    const baseUrl = `https://api.openweathermap.org/data/2.5/${req?.query?.data}?q=${req?.query?.location}&units=metric&cnt=8&appid=${process.env.WEATHER_API_KEY}`;
 
     const weather = await fetch(baseUrl);
     const forecast = await weather.json();

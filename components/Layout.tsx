@@ -35,18 +35,20 @@ const Main = ({ children }: Props) => {
         {children}
       </Container>
       <Footer />
-      <IconButton
-        aria-label='Scroll to top'
-        icon={<TbArrowUp />}
-        colorScheme='teal'
-        onClick={() => scrollTo({ y: 0 })}
-        display={scroll.y === 0 ? 'none' : 'inline-flex'}
-        position='fixed'
-        bottom='24px'
-        right='24px'
-        pr={0}
-        zIndex={100}
-      />
+      {scroll.y > 100 && (
+        <IconButton
+          aria-label='Scroll to top'
+          icon={<TbArrowUp />}
+          colorScheme='teal'
+          onClick={() => scrollTo({ y: 0 })}
+          position='fixed'
+          bottom='24px'
+          right='24px'
+          pr={0}
+          zIndex={100}
+          tabIndex={0}
+        />
+      )}
     </Box>
   );
 };

@@ -25,7 +25,7 @@ const CurrentConditions = () => {
       {!isLoading && (
         <Box>
           <HStack>
-            <Box w='50%'>
+            <Box w={{ base: '100%', sm: '50%' }}>
               <Heading size='lg' display={{ base: 'inline-block', md: 'none' }}>
                 {weather.name}
               </Heading>
@@ -61,7 +61,7 @@ const CurrentConditions = () => {
                 {formatTemperature(units, weather.main.temp_min)}
               </Text>
             </Box>
-            <Box w='50%' fontSize='lg' textAlign='right'>
+            <Box w='50%' fontSize='lg' textAlign='right' display={{ base: 'none', sm: 'block' }}>
               <WeatherIcon size={128} variant={weather.weather[0].icon} />
             </Box>
           </HStack>
