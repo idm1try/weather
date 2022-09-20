@@ -5,7 +5,7 @@ const config: ThemeConfig = {
   useSystemColorMode: true,
 };
 
-const breakpoints = { sm: '330px', md: '768px', lg: '960px', xl: '1200px', '2xl': '1536px' };
+const breakpoints = { sm: '330px' };
 
 const theme = extendTheme({ config, breakpoints });
 
