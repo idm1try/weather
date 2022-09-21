@@ -27,12 +27,14 @@ export default function Search() {
           type='text'
           spellCheck='false'
           value={location}
-          onChange={e => setLocation(e.target.value)}
+          onChange={event => setLocation(event.target.value)}
           ref={inputRef}
         />
-        <Box display={{ base: 'none', md: 'inline-block' }}>
-          <InputRightElement pointerEvents='none' children={<Kbd>/</Kbd>} />
-        </Box>
+        <InputRightElement
+          display={{ base: 'none', md: 'inline-flex' }}
+          pointerEvents='none'
+          children={<Kbd>/</Kbd>}
+        />
       </InputGroup>
     </Box>
   );
