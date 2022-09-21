@@ -3,6 +3,7 @@ import { useWindowScroll } from '@mantine/hooks';
 import Head from 'next/head';
 import { ReactNode } from 'react';
 import { TbArrowUp } from 'react-icons/tb';
+import useWeather from '../lib/useWeather';
 import Footer from './Footer';
 import Navbar from './Navbar';
 
@@ -11,6 +12,7 @@ interface Props {
 }
 
 const Main = ({ children }: Props) => {
+  const { isLoading } = useWeather();
   const [scroll, scrollTo] = useWindowScroll();
 
   return (
@@ -34,7 +36,7 @@ const Main = ({ children }: Props) => {
       <Container maxW='container.md' pt={14}>
         {children}
       </Container>
-      <Footer />
+      {!isLoading && <Footer />}
       {scroll.y > 100 && (
         <IconButton
           aria-label='Scroll to top'

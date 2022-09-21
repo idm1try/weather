@@ -12,7 +12,7 @@ const Home = () => {
   return (
     <Box>
       {isLoading ? (
-        <Center height={{ base: '65vh', md: '76vh' }}>
+        <Center pos='fixed' top='50%' right='40%' left='40%'>
           <Spinner color={spinnerColor} thickness='4px' speed='0.65s' size='xl' />
         </Center>
       ) : (
