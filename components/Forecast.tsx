@@ -1,15 +1,28 @@
-import { Box, GridItem, SimpleGrid, Text, useColorModeValue } from '@chakra-ui/react';
+import {
+  Box,
+  Center,
+  GridItem,
+  SimpleGrid,
+  Spinner,
+  Text,
+  useColorModeValue,
+} from '@chakra-ui/react';
 import { formatTemperature, formatTime } from '../lib/formatters';
 import useWeather from '../lib/useWeather';
 import WeatherIcon from './WeatherIcon';
 
 const Forecast = () => {
   const { isLoadingForecast, forecast, units } = useWeather();
+  const spinnerColor = useColorModeValue('teal.500', 'teal.200');
   const gridItemColor = useColorModeValue('gray.50', 'gray.900');
 
   return (
     <Box>
-      {!isLoadingForecast && (
+      {isLoadingForecast ? (
+        <Center>
+          <Spinner color={spinnerColor} thickness='4px' speed='0.65s' size='xl' my={5} />
+        </Center>
+      ) : (
         <SimpleGrid spacing={2} columns={{ base: 2, md: 4 }} textAlign='center'>
           {forecast?.list
             ?.map((forecast, index: number) => {
