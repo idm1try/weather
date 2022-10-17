@@ -1,6 +1,6 @@
 # Weather
 
-View your [weather](https://nextwx.vercel.app)
+View your [weather](https://weather.idm1try.ru)
 
 ## Getting Started
 
