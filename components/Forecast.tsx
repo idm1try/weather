@@ -23,11 +23,11 @@ const Forecast = () => {
           <Spinner color={spinnerColor} thickness='4px' speed='0.65s' size='xl' my={5} />
         </Center>
       ) : (
-        <SimpleGrid spacing={2} columns={{ base: 2, md: 4 }} textAlign='center'>
+        <SimpleGrid spacing={3} columns={{ base: 2, md: 4 }} textAlign='center'>
           {forecast?.list
             ?.map((forecast, index: number) => {
               return (
-                <GridItem bgColor={gridItemColor} borderRadius='md' p={2} key={index}>
+                <GridItem bgColor={gridItemColor} rounded='lg' p={2} key={index}>
                   <Text fontWeight='bold'>{formatTime(units, forecast.dt)}</Text>
                   <Text>{formatTemperature(units, forecast.main.temp)}</Text>
                   <WeatherIcon size={100} variant={forecast.weather[0].icon} />

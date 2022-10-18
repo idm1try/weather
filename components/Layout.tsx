@@ -1,19 +1,13 @@
-import { Box, Container, IconButton } from '@chakra-ui/react';
-import { useWindowScroll } from '@mantine/hooks';
+import { Box, Container } from '@chakra-ui/react';
 import Head from 'next/head';
 import { ReactNode } from 'react';
-import { TbArrowUp } from 'react-icons/tb';
 import useWeather from '../lib/useWeather';
 import Footer from './Footer';
+import GoToTopButton from './GoToTopButton';
 import Navbar from './Navbar';
 
-interface Props {
-  children: ReactNode;
-}
-
-const Main = ({ children }: Props) => {
+const Main = ({ children }: { children: ReactNode }) => {
   const { isLoading } = useWeather();
-  const [scroll, scrollTo] = useWindowScroll();
 
   return (
     <Box as='main' pb={8}>
@@ -37,20 +31,7 @@ const Main = ({ children }: Props) => {
         {children}
       </Container>
       {!isLoading && <Footer />}
-      {scroll.y > 100 && (
-        <IconButton
-          aria-label='Scroll to top'
-          icon={<TbArrowUp />}
-          colorScheme='teal'
-          onClick={() => scrollTo({ y: 0 })}
-          position='fixed'
-          bottom='24px'
-          right='24px'
-          pr={0}
-          zIndex={100}
-          tabIndex={0}
-        />
-      )}
+      <GoToTopButton />
     </Box>
   );
 };

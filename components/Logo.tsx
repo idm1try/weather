@@ -1,4 +1,4 @@
-import { Icon, Text, useColorModeValue } from '@chakra-ui/react';
+import { Box, Icon, Text, useColorModeValue } from '@chakra-ui/react';
 import styled from '@emotion/styled';
 import Link from 'next/link';
 import { TbSun } from 'react-icons/tb';
@@ -7,7 +7,7 @@ const LogoBox = styled.span`
   display: inline-flex;
 
   svg {
-    transition: 200ms ease;
+    transition: 200ms transform ease;
   }
 
   &:hover svg {
@@ -15,19 +15,20 @@ const LogoBox = styled.span`
   }
 `;
 
-const Logo = () => {
-  return (
-    <Link href='/'>
-      <a>
+const Logo = () => (
+  <Link href='/' scroll={false}>
+    <a>
+      <Box
+        transition='0.25s color ease-out'
+        _hover={{ color: useColorModeValue('gray.600', 'gray.300') }}
+      >
         <LogoBox>
           <Icon as={TbSun} mt={1} />
-          <Text color={useColorModeValue('gray.800', 'whiteAlpha.900')} fontWeight='bold'>
-            Weather
-          </Text>
+          <Text fontWeight='bold'>Weather</Text>
         </LogoBox>
-      </a>
-    </Link>
-  );
-};
+      </Box>
+    </a>
+  </Link>
+);
 
 export default Logo;

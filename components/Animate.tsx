@@ -7,18 +7,14 @@ const variants = {
   exit: { opacity: 0, x: -0, y: 20 },
 };
 
-interface Props {
-  children: ReactNode;
-}
-
-const Animate = ({ children }: Props) => {
+const Animate = ({ children }: { children: ReactNode }) => {
   return (
     <motion.article
       initial='hidden'
       animate='enter'
       exit='exit'
       variants={variants}
-      transition={{ duration: 0.4, type: 'easeInOut' }}
+      transition={{ duration: 0.4, ease: 'easeInOut' }}
       style={{ position: 'relative' }}
     >
       {children}

@@ -19,7 +19,9 @@ export default function Search() {
   return (
     <Box>
       <InputGroup>
-        <InputLeftElement pointerEvents='none' children={<Box as={TbSearch} color='gray.500' />} />
+        <InputLeftElement pointerEvents='none'>
+          <Box as={TbSearch} color='gray.500' />
+        </InputLeftElement>
         <Input
           variant='filled'
           aria-label='Enter city'
@@ -30,11 +32,9 @@ export default function Search() {
           onChange={event => setLocation(event.target.value)}
           ref={inputRef}
         />
-        <InputRightElement
-          display={{ base: 'none', md: 'inline-flex' }}
-          pointerEvents='none'
-          children={<Kbd>/</Kbd>}
-        />
+        <InputRightElement display={{ base: 'none', md: 'inline-flex' }} pointerEvents='none'>
+          <Kbd>/</Kbd>
+        </InputRightElement>
       </InputGroup>
     </Box>
   );

@@ -38,7 +38,7 @@ const Navbar = () => {
       w='100%'
       backdropFilter='blur(10px)'
       bg={useColorModeValue('#F7FAFC80', '#17192380')}
-      zIndex={2}
+      zIndex={10}
     >
       <Container
         display='flex'

@@ -1,6 +1,7 @@
 import {
   Box,
   Divider,
+  Flex,
   GridItem,
   Heading,
   HStack,
@@ -53,54 +54,46 @@ const CurrentConditions = () => {
               <WeatherIcon size={128} variant={weather.weather[0].icon} />
             </Box>
           </HStack>
-          <Stack bgColor={stackColor} p={3} my={5} borderRadius='md'>
+          <Stack bgColor={stackColor} p={3} my={5} rounded='lg'>
             <SimpleGrid spacing={2} columns={{ base: 1, md: 2 }}>
               <GridItem>
-                <HStack>
-                  <Box w='50%'>
-                    <Icon as={TbWind} h={3} w={3} mr={1} />
+                <Flex justify='space-between'>
+                  <Box>
+                    <Icon as={TbWind} fontSize={12} mr={1} />
                     <b>Wind</b>
                   </Box>
-                  <Box w='50%' textAlign='right'>
-                    {formatSpeed(units, weather.wind.speed)}
-                  </Box>
-                </HStack>
+                  <Box>{formatSpeed(units, weather.wind.speed)}</Box>
+                </Flex>
                 <Divider mt={2} />
               </GridItem>
               <GridItem>
-                <HStack>
-                  <Box w='50%'>
-                    <Icon as={TbDroplet} h={3} w={3} mr={1} />
+                <Flex justify='space-between'>
+                  <Box>
+                    <Icon as={TbDroplet} fontSize={12} mr={1} />
                     <b>Humidity</b>
                   </Box>
-                  <Box w='50%' textAlign='right'>
-                    {weather.main.humidity}%
-                  </Box>
-                </HStack>
+                  <Box>{weather.main.humidity}%</Box>
+                </Flex>
                 <Divider mt={2} />
               </GridItem>
               <GridItem>
-                <HStack>
-                  <Box w='50%'>
-                    <Icon as={TbSunrise} h={3} w={3} mr={1} />
+                <Flex justify='space-between'>
+                  <Box>
+                    <Icon as={TbSunrise} fontSize={12} mr={1} />
                     <b>Sunrise</b>
                   </Box>
-                  <Box w='50%' textAlign='right'>
-                    {formatTime(units, weather.sys.sunrise)}
-                  </Box>
-                </HStack>
+                  <Box>{formatTime(units, weather.sys.sunrise)}</Box>
+                </Flex>
                 <Divider display={{ md: 'none' }} mt={2} />
               </GridItem>
               <GridItem>
-                <HStack>
-                  <Box w='50%'>
-                    <Icon as={TbSunset} h={3} w={3} mr={1} />
+                <Flex justify='space-between'>
+                  <Box>
+                    <Icon as={TbSunset} fontSize={12} mr={1} />
                     <b>Sunset</b>
                   </Box>
-                  <Box w='50%' textAlign='right'>
-                    {formatTime(units, weather.sys.sunset)}
-                  </Box>
-                </HStack>
+                  <Box>{formatTime(units, weather.sys.sunset)}</Box>
+                </Flex>
               </GridItem>
             </SimpleGrid>
           </Stack>

@@ -5,7 +5,7 @@ import CurrentConditions from '../components/CurrentConditions';
 import Forecast from '../components/Forecast';
 import useWeather from '../lib/useWeather';
 
-const Home = () => {
+const Weather = () => {
   const { isLoading, weather } = useWeather();
   const spinnerColor = useColorModeValue('teal.500', 'teal.200');
 
@@ -27,7 +27,9 @@ const Home = () => {
                   <Forecast />
                 </Box>
               ) : (
-                <Heading textAlign='center'>Enter City</Heading>
+                <Heading textAlign='center' my={100}>
+                  Enter City
+                </Heading>
               )}
             </Box>
           )}
@@ -37,5 +39,4 @@ const Home = () => {
   );
 };
 
-export default Home;
-export { getServerSideProps } from '../components/Chakra';
+export default Weather;

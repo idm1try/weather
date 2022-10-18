@@ -1,14 +1,15 @@
 import Layout from '../components/Layout';
-import Chakra from '../components/Chakra';
-import type { AppProps } from 'next/app';
+import { AppProps } from 'next/app';
+import { ChakraProvider } from '@chakra-ui/react';
+import theme from '../lib/theme';
 
 function Website({ Component, pageProps, router }: AppProps) {
   return (
-    <Chakra>
+    <ChakraProvider theme={theme}>
       <Layout>
         <Component {...pageProps} key={router.route} />
       </Layout>
-    </Chakra>
+    </ChakraProvider>
   );
 }
 
