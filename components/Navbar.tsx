@@ -16,7 +16,7 @@ import {
   useDisclosure,
 } from '@chakra-ui/react';
 import { TbBrandGithub, TbMenu2, TbSearch } from 'react-icons/tb';
-import useWeather from '../lib/useWeather';
+import useWeather from 'lib/useWeather';
 import Logo from './Logo';
 import Search from './Search';
 import ThemeToggleButton from './ThemeToggleButton';

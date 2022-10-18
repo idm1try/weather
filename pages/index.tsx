@@ -1,9 +1,9 @@
 import { Box, Center, Heading, Spinner, useColorModeValue } from '@chakra-ui/react';
-import Animate from '../components/Animate';
-import CityNotFound from '../components/CityNotFound';
-import CurrentConditions from '../components/CurrentConditions';
-import Forecast from '../components/Forecast';
-import useWeather from '../lib/useWeather';
+import Animate from 'components/Animate';
+import CityNotFound from 'components/CityNotFound';
+import CurrentConditions from 'components/CurrentConditions';
+import Forecast from 'components/Forecast';
+import useWeather from 'lib/useWeather';
 
 const Weather = () => {
   const { isLoading, weather } = useWeather();

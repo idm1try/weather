@@ -7,19 +7,17 @@ const variants = {
   exit: { opacity: 0, x: -0, y: 20 },
 };
 
-const Animate = ({ children }: { children: ReactNode }) => {
-  return (
-    <motion.article
-      initial='hidden'
-      animate='enter'
-      exit='exit'
-      variants={variants}
-      transition={{ duration: 0.4, ease: 'easeInOut' }}
-      style={{ position: 'relative' }}
-    >
-      {children}
-    </motion.article>
-  );
-};
+const Animate = ({ children }: { children: ReactNode }) => (
+  <motion.article
+    initial='hidden'
+    animate='enter'
+    exit='exit'
+    variants={variants}
+    transition={{ duration: 0.4, ease: 'easeInOut' }}
+    style={{ position: 'relative' }}
+  >
+    {children}
+  </motion.article>
+);
 
 export default Animate;

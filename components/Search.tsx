@@ -2,7 +2,7 @@ import { Box, Input, InputGroup, InputLeftElement, InputRightElement, Kbd } from
 import { useHotkeys } from '@mantine/hooks';
 import { useRef } from 'react';
 import { TbSearch } from 'react-icons/tb';
-import useWeather from '../lib/useWeather';
+import useWeather from 'lib/useWeather';
 
 export default function Search() {
   const { location, setLocation } = useWeather();

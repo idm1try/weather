@@ -1,7 +1,7 @@
 import { Box, Container } from '@chakra-ui/react';
 import Head from 'next/head';
 import { ReactNode } from 'react';
-import useWeather from '../lib/useWeather';
+import useWeather from 'lib/useWeather';
 import Footer from './Footer';
 import GoToTopButton from './GoToTopButton';
 import Navbar from './Navbar';

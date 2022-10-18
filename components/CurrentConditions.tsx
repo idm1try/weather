@@ -12,8 +12,8 @@ import {
   useColorModeValue,
 } from '@chakra-ui/react';
 import { TbDroplet, TbSunrise, TbSunset, TbWind } from 'react-icons/tb';
-import { formatSpeed, formatTemperature, formatTime } from '../lib/formatters';
-import useWeather from '../lib/useWeather';
+import { formatSpeed, formatTemperature, formatTime } from 'lib/formatters';
+import useWeather from 'lib/useWeather';
 import WeatherIcon from './WeatherIcon';
 
 const CurrentConditions = () => {

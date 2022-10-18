@@ -7,8 +7,8 @@ import {
   Text,
   useColorModeValue,
 } from '@chakra-ui/react';
-import { formatTemperature, formatTime } from '../lib/formatters';
-import useWeather from '../lib/useWeather';
+import { formatTemperature, formatTime } from 'lib/formatters';
+import useWeather from 'lib/useWeather';
 import WeatherIcon from './WeatherIcon';
 
 const Forecast = () => {

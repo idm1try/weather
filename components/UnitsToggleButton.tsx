@@ -2,7 +2,7 @@ import { IconButton } from '@chakra-ui/react';
 import { useHotkeys } from '@mantine/hooks';
 import { AnimatePresence, motion } from 'framer-motion';
 import { TbTemperatureCelsius, TbTemperatureFahrenheit } from 'react-icons/tb';
-import useWeather from '../lib/useWeather';
+import useWeather from 'lib/useWeather';
 
 const UnitsToggleButton = () => {
   const { units, setUnits } = useWeather();
