@@ -17,17 +17,15 @@ const LogoBox = styled.span`
 
 const Logo = () => (
   <Link href='/' scroll={false}>
-    <a>
-      <Box
-        transition='0.25s color ease-out'
-        _hover={{ color: useColorModeValue('gray.600', 'gray.300') }}
-      >
-        <LogoBox>
-          <Icon as={TbSun} mt={1} />
-          <Text fontWeight='bold'>Weather</Text>
-        </LogoBox>
-      </Box>
-    </a>
+    <Box
+      transition='0.25s color ease-out'
+      _hover={{ color: useColorModeValue('gray.600', 'gray.300') }}
+    >
+      <LogoBox>
+        <Icon as={TbSun} mt={1} />
+        <Text fontWeight='bold'>Weather</Text>
+      </LogoBox>
+    </Box>
   </Link>
 );
 

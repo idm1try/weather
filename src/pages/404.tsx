@@ -5,7 +5,7 @@ import Animate from 'components/Animate';
 
 const NotFound = () => (
   <Animate>
-    <Box textAlign='center' mt={5}>
+    <Box textAlign='center' mt={8}>
       <Heading
         display='inline-block'
         as='h2'

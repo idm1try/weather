@@ -20,7 +20,7 @@ const Weather = () => {
           {weather.cod == '404' ? (
             <CityNotFound />
           ) : (
-            <Box mt={5}>
+            <Box mt={8}>
               {!weather.message ? (
                 <Box>
                   <CurrentConditions />
