@@ -25,8 +25,8 @@ const CurrentConditions = () => {
     <Box>
       {!isLoading && (
         <Box>
-          <HStack>
-            <Box w={{ base: '100%', sm: '50%' }}>
+          <Flex justify='space-between'>
+            <Box>
               <Heading size='lg' display={{ base: 'inline-block', md: 'none' }}>
                 {weather.name}
               </Heading>
@@ -50,10 +50,10 @@ const CurrentConditions = () => {
                 </Text>
               )}
             </Box>
-            <Box w='50%' fontSize='lg' textAlign='right' display={{ base: 'none', sm: 'block' }}>
+            <Box fontSize='lg' display={{ base: 'none', sm: 'block' }}>
               <WeatherIcon size={128} variant={weather.weather[0].icon} />
             </Box>
-          </HStack>
+          </Flex>
           <Stack bgColor={stackColor} p={3} my={5} rounded='lg'>
             <SimpleGrid spacing={2} columns={{ base: 1, md: 2 }}>
               <GridItem>

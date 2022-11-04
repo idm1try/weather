@@ -1,10 +1,7 @@
-import useSWR from 'swr';
-import { WeatherData } from './types';
 import { useLocalStorage } from '@mantine/hooks';
-
-async function fetcher(url: string) {
-  return await fetch(url).then(res => res.json());
-}
+import useSWR from 'swr';
+import fetcher from './fetcher';
+import { WeatherData } from './types';
 
 export default function useWeather(): WeatherData {
   const [location, setLocation] = useLocalStorage({ key: 'location', defaultValue: 'New York' });
