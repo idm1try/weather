@@ -1,4 +1,4 @@
-import { Box, Icon, Link, Stack, StackProps, Text, VisuallyHidden, VStack } from '@chakra-ui/react';
+import { Icon, Link, Stack, StackProps, Text, VisuallyHidden, VStack } from '@chakra-ui/react';
 import { ElementType } from 'react';
 import { TbBrandGithub, TbBrandTwitter, TbHeart, TbMail, TbWorld } from 'react-icons/tb';
 
@@ -28,20 +28,6 @@ export const Footer = (props: StackProps) => (
       <SocialLink icon={TbBrandTwitter} href='https://twitter.com/idm1try' label='Twitter' />
       <SocialLink icon={TbMail} href='mailto:admin@idm1try.ru' label='Mail' />
     </Stack>
-
-    <Box
-      as='a'
-      href='https://nesteroff561.ru'
-      fontSize='sm'
-      fontWeight='semibold'
-      bg='black'
-      color='white'
-      px='4'
-      py='2'
-      rounded='lg'
-    >
-      Deployed by nesteroff561
-    </Box>
   </VStack>
 );
 
