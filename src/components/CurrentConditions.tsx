@@ -54,7 +54,7 @@ const CurrentConditions = () => {
                   </div>
                   <div>{formatSpeed(units, weather.wind.speed)}</div>
                 </div>
-                <hr className='border-top mt-2 border-gray-800' />
+                <hr className='border-top mt-2 border-gray-200 dark:border-gray-800' />
               </div>
               <div>
                 <div className='flex justify-between'>
@@ -64,7 +64,7 @@ const CurrentConditions = () => {
                   </div>
                   <div>{weather.main.humidity}%</div>
                 </div>
-                <hr className='border-top mt-2 border-gray-800' />
+                <hr className='border-top mt-2 border-gray-200 dark:border-gray-800' />
               </div>
               <div>
                 <div className='flex justify-between'>
@@ -74,7 +74,7 @@ const CurrentConditions = () => {
                   </div>
                   <div>{formatTime(units, weather.sys.sunrise)}</div>
                 </div>
-                <hr className='border-top mt-2 border-gray-800 md:hidden' />
+                <hr className='border-top mt-2 border-gray-200 dark:border-gray-800 md:hidden' />
               </div>
               <div>
                 <div className='flex justify-between'>
