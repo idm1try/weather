@@ -21,7 +21,7 @@ const CurrentConditions = () => {
             <div>
               <div className='text-2xl font-bold capitalize'>{weather.weather[0].description}</div>
               <div
-                className='cursor-pointer text-6xl font-bold leading-normal text-teal-600 transition-colors duration-500 hover:text-teal-700 active:text-teal-700/80 dark:text-teal-300 dark:hover:text-teal-400 dark:active:text-teal-400/80'
+                className='animate-fade_in_up cursor-pointer text-6xl font-bold leading-normal text-teal-600 transition-colors duration-500 hover:text-teal-700 active:text-teal-700/80 dark:text-teal-300 dark:hover:text-teal-400 dark:active:text-teal-400/80'
                 onClick={toggleUnits}
               >
                 {formatTemperature(units, weather.main.temp)}
