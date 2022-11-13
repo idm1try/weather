@@ -1,41 +1,39 @@
-import { Box, Center, Heading, Spinner, useColorModeValue } from '@chakra-ui/react';
-import Animate from 'components/Animate';
 import CityNotFound from 'components/CityNotFound';
 import CurrentConditions from 'components/CurrentConditions';
 import Forecast from 'components/Forecast';
+import GoToTopButton from 'components/GoToTopButton';
+import Search from 'components/Search';
+import Spinner from 'components/Spinner';
 import useWeather from 'lib/useWeather';
 
 const Weather = () => {
   const { isLoading, weather } = useWeather();
-  const spinnerColor = useColorModeValue('teal.500', 'teal.200');
 
   return (
-    <Box>
+    <div>
+      <Search />
       {isLoading ? (
-        <Center pos='fixed' top='50%' right='40%' left='40%'>
-          <Spinner color={spinnerColor} thickness='4px' speed='0.65s' size='xl' />
-        </Center>
+        <Spinner className='mx-auto my-40' />
       ) : (
-        <Animate>
+        <div>
           {weather.cod == '404' ? (
             <CityNotFound />
           ) : (
-            <Box mt={8}>
+            <div className='mt-6'>
               {!weather.message ? (
-                <Box>
+                <div>
                   <CurrentConditions />
                   <Forecast />
-                </Box>
+                </div>
               ) : (
-                <Heading textAlign='center' my={100}>
-                  Enter City
-                </Heading>
+                <h1 className='my-20 text-center text-4xl font-bold'>Enter City</h1>
               )}
-            </Box>
+            </div>
           )}
-        </Animate>
+        </div>
       )}
-    </Box>
+      <GoToTopButton />
+    </div>
   );
 };
 

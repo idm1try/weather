@@ -1,54 +1,42 @@
-import {
-  Box,
-  Center,
-  GridItem,
-  SimpleGrid,
-  Spinner,
-  Text,
-  useColorModeValue,
-} from '@chakra-ui/react';
 import { formatTemperature, formatTime } from 'lib/formatters';
 import useWeather from 'lib/useWeather';
+import Spinner from './Spinner';
 import WeatherIcon from './WeatherIcon';
 
 const Forecast = () => {
   const { isLoadingForecast, forecast, units } = useWeather();
-  const spinnerColor = useColorModeValue('teal.500', 'teal.200');
-  const gridItemColor = useColorModeValue('gray.50', 'gray.900');
 
   return (
-    <Box>
+    <div>
       {isLoadingForecast ? (
-        <Center>
-          <Spinner color={spinnerColor} thickness='4px' speed='0.65s' size='xl' my={5} />
-        </Center>
+        <Spinner className='mx-auto my-20' />
       ) : (
-        <SimpleGrid spacing={3} columns={{ base: 2, md: 4 }} textAlign='center'>
-          {forecast?.list
-            ?.map((forecast, index: number) => {
-              return (
-                <GridItem bgColor={gridItemColor} rounded='lg' p={2} key={index}>
-                  <Text fontWeight='bold'>{formatTime(units, forecast.dt)}</Text>
-                  <Text>{formatTemperature(units, forecast.main.temp)}</Text>
-                  <WeatherIcon size={100} variant={forecast.weather[0].icon} />
-                  <Text fontWeight='bold' textTransform='capitalize'>
-                    {forecast.weather[0].description}
-                  </Text>
-                  {formatTemperature(units, forecast.main.feels_like) !=
-                  formatTemperature(units, forecast.main.temp) ? (
-                    <Text color='gray.500'>
-                      Feels Like: {formatTemperature(units, forecast.main.feels_like)}
-                    </Text>
-                  ) : (
-                    <br />
-                  )}
-                </GridItem>
-              );
-            })
-            .slice(0, 8)}
-        </SimpleGrid>
+        <div className='grid grid-cols-2 gap-3 text-center md:grid-cols-4'>
+          {forecast?.list?.map((forecast, index: number) => {
+            return (
+              <div className='rounded-lg bg-gray-50 p-2 dark:bg-gray-800/50' key={index}>
+                <div className='font-bold'>{formatTime(units, forecast.dt)}</div>
+                <div>{formatTemperature(units, forecast.main.temp)}</div>
+                <WeatherIcon
+                  size={100}
+                  variant={forecast.weather[0].icon}
+                  className='mx-auto my-2'
+                />
+                <div className='font-bold capitalize'>{forecast.weather[0].description}</div>
+                {formatTemperature(units, forecast.main.feels_like) !=
+                formatTemperature(units, forecast.main.temp) ? (
+                  <div className='text-gray-500'>
+                    Feels Like: {formatTemperature(units, forecast.main.feels_like)}
+                  </div>
+                ) : (
+                  <br />
+                )}
+              </div>
+            );
+          })}
+        </div>
       )}
-    </Box>
+    </div>
   );
 };
 

@@ -1,105 +1,95 @@
-import {
-  Box,
-  Divider,
-  Flex,
-  GridItem,
-  Heading,
-  HStack,
-  Icon,
-  SimpleGrid,
-  Stack,
-  Text,
-  useColorModeValue,
-} from '@chakra-ui/react';
 import { TbDroplet, TbSunrise, TbSunset, TbWind } from 'react-icons/tb';
 import { formatSpeed, formatTemperature, formatTime } from 'lib/formatters';
 import useWeather from 'lib/useWeather';
 import WeatherIcon from './WeatherIcon';
+import { useHotkeys } from '@mantine/hooks';
 
 const CurrentConditions = () => {
-  const { isLoading, weather, units } = useWeather();
-  const headingColor = useColorModeValue('teal.500', 'teal.200');
-  const stackColor = useColorModeValue('gray.50', 'gray.900');
+  const { isLoading, weather, units, setUnits } = useWeather();
+
+  function toggleUnits() {
+    setUnits(units == 'us' ? 'metric' : 'us');
+  }
+
+  useHotkeys([['f', () => toggleUnits()]]);
 
   return (
-    <Box>
+    <div>
       {!isLoading && (
-        <Box>
-          <Flex justify='space-between'>
-            <Box>
-              <Heading size='lg' display={{ base: 'inline-block', md: 'none' }}>
-                {weather.name}
-              </Heading>
-              <Heading as='h2' size='lg' textTransform='capitalize'>
-                {weather.weather[0].description}
-              </Heading>
-              <Heading size='4xl' color={headingColor} lineHeight='normal'>
+        <div>
+          <div className='flex justify-between'>
+            <div>
+              <div className='text-2xl font-bold capitalize'>{weather.weather[0].description}</div>
+              <div
+                className='cursor-pointer text-6xl font-bold leading-normal text-teal-600 transition-colors duration-500 hover:text-teal-700 active:text-teal-700/80 dark:text-teal-300 dark:hover:text-teal-400 dark:active:text-teal-400/80'
+                onClick={toggleUnits}
+              >
                 {formatTemperature(units, weather.main.temp)}
-              </Heading>
-              {formatTemperature(units, weather.main.feels_like) !=
+              </div>
+              {formatTemperature(units, weather.main.feels_like) !==
                 formatTemperature(units, weather.main.temp) && (
-                <Text fontWeight='bold' fontSize='lg'>
+                <div className='text-lg font-bold'>
                   Feels Like: {formatTemperature(units, weather.main.feels_like)}
-                </Text>
+                </div>
               )}
               {formatTemperature(units, weather.main.temp_max) !=
                 formatTemperature(units, weather.main.temp_min) && (
-                <Text fontSize='lg' textColor='gray.500'>
+                <div className='text-lg text-gray-500'>
                   High: {formatTemperature(units, weather.main.temp_max)} Low:{' '}
                   {formatTemperature(units, weather.main.temp_min)}
-                </Text>
+                </div>
               )}
-            </Box>
-            <Box fontSize='lg' display={{ base: 'none', sm: 'block' }}>
+            </div>
+            <div className='hidden text-lg min-[370px]:block'>
               <WeatherIcon size={128} variant={weather.weather[0].icon} />
-            </Box>
-          </Flex>
-          <Stack bgColor={stackColor} p={3} my={5} rounded='lg'>
-            <SimpleGrid spacing={2} columns={{ base: 1, md: 2 }}>
-              <GridItem>
-                <Flex justify='space-between'>
-                  <Box>
-                    <Icon as={TbWind} fontSize={12} mr={1} />
+            </div>
+          </div>
+          <div className='my-5 rounded-lg bg-gray-50 p-3 dark:bg-gray-800/50'>
+            <div className='grid grid-cols-1 gap-2 md:grid-cols-2'>
+              <div>
+                <div className='flex justify-between'>
+                  <div>
+                    <TbWind className='mr-1 mb-1 inline-block' />
                     <b>Wind</b>
-                  </Box>
-                  <Box>{formatSpeed(units, weather.wind.speed)}</Box>
-                </Flex>
-                <Divider mt={2} />
-              </GridItem>
-              <GridItem>
-                <Flex justify='space-between'>
-                  <Box>
-                    <Icon as={TbDroplet} fontSize={12} mr={1} />
+                  </div>
+                  <div>{formatSpeed(units, weather.wind.speed)}</div>
+                </div>
+                <hr className='border-top mt-2 border-gray-800' />
+              </div>
+              <div>
+                <div className='flex justify-between'>
+                  <div>
+                    <TbDroplet className='mr-1 mb-1 inline-block' />
                     <b>Humidity</b>
-                  </Box>
-                  <Box>{weather.main.humidity}%</Box>
-                </Flex>
-                <Divider mt={2} />
-              </GridItem>
-              <GridItem>
-                <Flex justify='space-between'>
-                  <Box>
-                    <Icon as={TbSunrise} fontSize={12} mr={1} />
+                  </div>
+                  <div>{weather.main.humidity}%</div>
+                </div>
+                <hr className='border-top mt-2 border-gray-800' />
+              </div>
+              <div>
+                <div className='flex justify-between'>
+                  <div>
+                    <TbSunrise className='mb-1 mr-1 inline-block' />
                     <b>Sunrise</b>
-                  </Box>
-                  <Box>{formatTime(units, weather.sys.sunrise)}</Box>
-                </Flex>
-                <Divider display={{ md: 'none' }} mt={2} />
-              </GridItem>
-              <GridItem>
-                <Flex justify='space-between'>
-                  <Box>
-                    <Icon as={TbSunset} fontSize={12} mr={1} />
+                  </div>
+                  <div>{formatTime(units, weather.sys.sunrise)}</div>
+                </div>
+                <hr className='border-top mt-2 border-gray-800 md:hidden' />
+              </div>
+              <div>
+                <div className='flex justify-between'>
+                  <div>
+                    <TbSunset className='mb-1 mr-1 inline-block' />
                     <b>Sunset</b>
-                  </Box>
-                  <Box>{formatTime(units, weather.sys.sunset)}</Box>
-                </Flex>
-              </GridItem>
-            </SimpleGrid>
-          </Stack>
-        </Box>
+                  </div>
+                  <div>{formatTime(units, weather.sys.sunset)}</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       )}
-    </Box>
+    </div>
   );
 };
 
