@@ -1,8 +1,8 @@
-import { useWindowScroll } from '@mantine/hooks';
-import { TbArrowUp } from 'react-icons/tb';
+import { useWindowScroll } from '@mantine/hooks'
+import { TbArrowUp } from 'react-icons/tb'
 
 const GoToTopButton = () => {
-  const [scroll, scrollTo] = useWindowScroll();
+  const [scroll, scrollTo] = useWindowScroll()
 
   return (
     <div>
@@ -16,7 +16,7 @@ const GoToTopButton = () => {
         </button>
       )}
     </div>
-  );
-};
+  )
+}
 
-export default GoToTopButton;
+export default GoToTopButton

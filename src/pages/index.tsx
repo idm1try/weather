@@ -1,13 +1,13 @@
-import CityNotFound from 'components/CityNotFound';
-import CurrentConditions from 'components/CurrentConditions';
-import Forecast from 'components/Forecast';
-import GoToTopButton from 'components/GoToTopButton';
-import Search from 'components/Search';
-import Spinner from 'components/Spinner';
-import useWeather from 'lib/useWeather';
+import CityNotFound from 'components/CityNotFound'
+import CurrentConditions from 'components/CurrentConditions'
+import Forecast from 'components/Forecast'
+import GoToTopButton from 'components/GoToTopButton'
+import Search from 'components/Search'
+import Spinner from 'components/Spinner'
+import useWeather from 'lib/useWeather'
 
 const Weather = () => {
-  const { isLoading, weather } = useWeather();
+  const { isLoading, weather } = useWeather()
 
   return (
     <div>
@@ -26,7 +26,9 @@ const Weather = () => {
                   <Forecast />
                 </div>
               ) : (
-                <h1 className='my-20 text-center text-4xl font-bold'>Enter City</h1>
+                <h1 className='my-20 text-center text-4xl font-bold'>
+                  Enter City
+                </h1>
               )}
             </div>
           )}
@@ -34,7 +36,7 @@ const Weather = () => {
       )}
       <GoToTopButton />
     </div>
-  );
-};
+  )
+}
 
-export default Weather;
+export default Weather

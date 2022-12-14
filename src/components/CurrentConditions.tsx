@@ -1,17 +1,17 @@
-import { TbDroplet, TbSunrise, TbSunset, TbWind } from 'react-icons/tb';
-import { formatSpeed, formatTemperature, formatTime } from 'lib/formatters';
-import useWeather from 'lib/useWeather';
-import WeatherIcon from './WeatherIcon';
-import { useHotkeys } from '@mantine/hooks';
+import { TbDroplet, TbSunrise, TbSunset, TbWind } from 'react-icons/tb'
+import { formatSpeed, formatTemperature, formatTime } from 'lib/formatters'
+import useWeather from 'lib/useWeather'
+import WeatherIcon from './WeatherIcon'
+import { useHotkeys } from '@mantine/hooks'
 
 const CurrentConditions = () => {
-  const { isLoading, weather, units, setUnits } = useWeather();
+  const { isLoading, weather, units, setUnits } = useWeather()
 
   function toggleUnits() {
-    setUnits(units == 'us' ? 'metric' : 'us');
+    setUnits(units == 'us' ? 'metric' : 'us')
   }
 
-  useHotkeys([['f', () => toggleUnits()]]);
+  useHotkeys([['f', () => toggleUnits()]])
 
   return (
     <div>
@@ -19,7 +19,9 @@ const CurrentConditions = () => {
         <div>
           <div className='flex justify-between'>
             <div>
-              <div className='text-2xl font-bold capitalize'>{weather.weather[0].description}</div>
+              <div className='text-2xl font-bold capitalize'>
+                {weather.weather[0].description}
+              </div>
               <div
                 className='animate-fade_in_up cursor-pointer text-6xl font-bold leading-normal text-teal-600 transition-colors duration-500 hover:text-teal-700 active:text-teal-700/80 dark:text-teal-300 dark:hover:text-teal-400 dark:active:text-teal-400/80'
                 onClick={toggleUnits}
@@ -29,7 +31,8 @@ const CurrentConditions = () => {
               {formatTemperature(units, weather.main.feels_like) !==
                 formatTemperature(units, weather.main.temp) && (
                 <div className='text-lg font-bold'>
-                  Feels Like: {formatTemperature(units, weather.main.feels_like)}
+                  Feels Like:{' '}
+                  {formatTemperature(units, weather.main.feels_like)}
                 </div>
               )}
               {formatTemperature(units, weather.main.temp_max) !=
@@ -90,7 +93,7 @@ const CurrentConditions = () => {
         </div>
       )}
     </div>
-  );
-};
+  )
+}
 
-export default CurrentConditions;
+export default CurrentConditions

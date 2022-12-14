@@ -1,3 +1,3 @@
 export default async function fetcher(url: string) {
-  return await fetch(url).then(res => res.json());
+  return await fetch(url).then(res => res.json())
 }

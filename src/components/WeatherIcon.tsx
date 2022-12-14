@@ -6,13 +6,13 @@ import {
   TbMoonStars,
   TbSnowflake,
   TbSun,
-} from 'react-icons/tb';
-import { WiDayCloudy, WiNightAltCloudy } from 'react-icons/wi';
+} from 'react-icons/tb'
+import { WiDayCloudy, WiNightAltCloudy } from 'react-icons/wi'
 
 interface WeatherIconProps {
-  size: number;
-  variant: string;
-  className?: string;
+  size: number
+  variant: string
+  className?: string
 }
 
 const WeatherIcon = ({ variant, size, className }: WeatherIconProps) => (
@@ -21,7 +21,9 @@ const WeatherIcon = ({ variant, size, className }: WeatherIconProps) => (
     {variant === '01n' && <TbMoonStars size={size} className={className} />}
 
     {variant === '02d' && <WiDayCloudy size={size} className={className} />}
-    {variant === '02n' && <WiNightAltCloudy size={size} className={className} />}
+    {variant === '02n' && (
+      <WiNightAltCloudy size={size} className={className} />
+    )}
 
     {variant === '03d' && <TbCloud size={size} className={className} />}
     {variant === '03n' && <TbCloud size={size} className={className} />}
@@ -44,6 +46,6 @@ const WeatherIcon = ({ variant, size, className }: WeatherIconProps) => (
     {variant === '50d' && <TbMist size={size} className={className} />}
     {variant === '50n' && <TbMist size={size} className={className} />}
   </div>
-);
+)
 
-export default WeatherIcon;
+export default WeatherIcon
