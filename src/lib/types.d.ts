@@ -112,6 +112,4 @@ export interface WeatherData {
   isError: boolean
   location: string
   setLocation: (string) => void
-  units: string
-  setUnits: (string) => void
 }

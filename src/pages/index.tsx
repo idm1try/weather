@@ -1,10 +1,6 @@
-import CityNotFound from 'components/CityNotFound'
-import CurrentConditions from 'components/CurrentConditions'
-import Forecast from 'components/Forecast'
-import GoToTopButton from 'components/GoToTopButton'
-import Search from 'components/Search'
-import Spinner from 'components/Spinner'
-import useWeather from 'lib/useWeather'
+import CurrentConditions from '@/components/current-conditions'
+import Search from '@/components/search'
+import useWeather from '@/lib/useWeather'
 
 const Weather = () => {
   const { isLoading, weather } = useWeather()
@@ -12,29 +8,26 @@ const Weather = () => {
   return (
     <div>
       <Search />
-      {isLoading ? (
-        <Spinner className='mx-auto my-40' />
-      ) : (
+      {!isLoading && (
         <div>
           {weather.cod == '404' ? (
-            <CityNotFound />
+            <div className='mt-12'>
+              <h1 className='mb-5 text-3xl font-bold'>City Not Found</h1>
+              <p className='text-neutral-600 dark:text-neutral-400'>
+                The city you&apos;re looking for does not seem to exist
+              </p>
+            </div>
           ) : (
             <div className='mt-6'>
               {!weather.message ? (
-                <div>
-                  <CurrentConditions />
-                  <Forecast />
-                </div>
+                <CurrentConditions />
               ) : (
-                <h1 className='my-20 text-center text-4xl font-bold'>
-                  Enter City
-                </h1>
+                <h1 className='mt-12 text-3xl font-bold'>Enter City</h1>
               )}
             </div>
           )}
         </div>
       )}
-      <GoToTopButton />
     </div>
   )
 }

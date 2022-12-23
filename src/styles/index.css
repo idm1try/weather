@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+.animate-in {
+  animation-delay: calc(var(--index) * 130ms);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .animated-list:hover li {
+    opacity: 0.5;
+  }
+
+  .animated-list:hover li:hover {
+    opacity: 1;
+  }
+}

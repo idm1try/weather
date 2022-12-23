@@ -1,16 +1,15 @@
 import { useLocalStorage } from '@mantine/hooks'
 import useSWR from 'swr'
-import fetcher from './fetcher'
 import { WeatherData } from './types'
+
+async function fetcher(url: string) {
+  return await fetch(url).then(res => res.json())
+}
 
 export default function useWeather(): WeatherData {
   const [location, setLocation] = useLocalStorage({
     key: 'location',
     defaultValue: 'New York',
-  })
-  const [units, setUnits] = useLocalStorage({
-    key: 'units',
-    defaultValue: 'metric',
   })
   const { data, error } = useSWR(
     `/api/weather?location=${location}&data=weather`,
@@ -29,7 +28,5 @@ export default function useWeather(): WeatherData {
     isError: error && forecastError,
     location,
     setLocation,
-    units,
-    setUnits,
   }
 }

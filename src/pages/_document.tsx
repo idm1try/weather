@@ -1,13 +1,17 @@
-import { Html, Head, Main, NextScript } from 'next/document'
+import Document, { Head, Html, Main, NextScript } from 'next/document'
 
-const Document = () => (
-  <Html lang='en'>
-    <Head />
-    <body className='mx-auto max-w-3xl break-words p-8 leading-6 text-zinc-900 transition-colors duration-500 dark:bg-gray-900 dark:text-zinc-300'>
-      <Main />
-      <NextScript />
-    </body>
-  </Html>
-)
+class MyDocument extends Document {
+  render() {
+    return (
+      <Html lang='en' className='scroll-smooth'>
+        <Head />
+        <body className='bg-neutral-50 text-neutral-900 antialiased dark:bg-neutral-900 dark:text-neutral-100'>
+          <Main />
+          <NextScript />
+        </body>
+      </Html>
+    )
+  }
+}
 
-export default Document
+export default MyDocument

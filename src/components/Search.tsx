@@ -1,18 +1,8 @@
-import { useHotkeys } from '@mantine/hooks'
-import { useRef } from 'react'
-import useWeather from 'lib/useWeather'
+import useWeather from '@/lib/useWeather'
+import cn from '@/lib/classNames'
 
-export default function Search({ className }: { className?: string }) {
+const Search = () => {
   const { location, setLocation } = useWeather()
-  const inputRef = useRef<HTMLInputElement>(null)
-
-  function focusToInput() {
-    if (inputRef.current !== null) {
-      inputRef.current.focus()
-    }
-  }
-
-  useHotkeys([['/', () => focusToInput()]])
 
   return (
     <div>
@@ -23,9 +13,16 @@ export default function Search({ className }: { className?: string }) {
         spellCheck='false'
         value={location}
         onChange={event => setLocation(event.target.value)}
-        ref={inputRef}
-        className={`w-full rounded-lg bg-gray-100 py-2 px-4 outline-none transition-colors duration-500 placeholder:text-gray-500 hover:bg-gray-200 focus:bg-gray-300/70 dark:bg-gray-800 dark:hover:bg-gray-800/70 dark:focus:bg-gray-800/50 ${className}`}
+        className={cn(
+          'rounded-lg bg-neutral-200 py-2 px-4',
+          'outline-none transition-colors',
+          'duration-300 placeholder:text-neutral-600',
+          'dark:placeholder:text-neutral-400',
+          'animate-in dark:bg-neutral-800'
+        )}
       />
     </div>
   )
 }
+
+export default Search
