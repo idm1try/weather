@@ -2,7 +2,7 @@ import { formatTemperature, formatTime } from '@/lib/formatters'
 import useWeather from '@/lib/useWeather'
 import { CSSProperties } from 'react'
 
-const CurrentConditions = () => {
+const WeatherInfo = () => {
   const { isLoading, weather, forecast } = useWeather()
 
   return (
@@ -68,4 +68,4 @@ const CurrentConditions = () => {
   )
 }
 
-export default CurrentConditions
+export default WeatherInfo

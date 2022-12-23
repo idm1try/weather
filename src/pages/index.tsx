@@ -1,4 +1,4 @@
-import CurrentConditions from '@/components/current-conditions'
+import WeatherInfo from '@/components/weather-info'
 import Search from '@/components/search'
 import useWeather from '@/lib/useWeather'
 
@@ -20,7 +20,7 @@ const Weather = () => {
           ) : (
             <div className='mt-6'>
               {!weather.message ? (
-                <CurrentConditions />
+                <WeatherInfo />
               ) : (
                 <h1 className='mt-12 text-3xl font-bold'>Enter City</h1>
               )}
