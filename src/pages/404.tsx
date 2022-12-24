@@ -6,7 +6,7 @@ import React from 'react'
 const NotFound = () => (
   <>
     <Head>
-      <title>Page Not Found | idm1try</title>
+      <title>Page Not Found | Weather</title>
     </Head>
     <div>
       <h1 className='mb-5 animate-in text-4xl font-bold'>404</h1>
