@@ -18,6 +18,7 @@ const Meta = () => (
     <meta name='twitter:title' content='Weather' />
     <meta name='twitter:site' content='@idm1try' />
     <meta name='twitter:creator' content='@idm1try' />
+    <link rel='preconnect' href='https://api.openweathermap.org' />
     <meta name='darkreader-lock' />
     <title>Weather</title>
   </Head>
