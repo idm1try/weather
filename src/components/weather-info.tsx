@@ -9,7 +9,10 @@ const WeatherInfo = () => {
     <div>
       {!isLoading && (
         <div>
-          <div className='animate-in' style={{ '--index': 1 } as CSSProperties}>
+          <div
+            className='mt-6 animate-in'
+            style={{ '--index': 1 } as CSSProperties}
+          >
             <h2 className='text-xl font-bold capitalize'>
               {weather.weather[0].description}
             </h2>
