@@ -18,6 +18,7 @@ const Meta = () => (
     <meta name='robots' content='follow, index' />
     <meta property='og:type' content='website' />
     <meta property='og:title' content='Weather' />
+    <meta property='og:site_name' content='Weather' />
     <meta property='og:description' content='View your weather' />
     <meta property='og:locale' content='en_US' />
     <meta property='og:url' content='https://weather.idm1try.ru/' />
