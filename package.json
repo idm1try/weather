@@ -1,6 +1,10 @@
 {
   "name": "weather",
-  "author": "idm1try",
+  "author": {
+    "name": "Dmitry Savchenko",
+    "email": "me@idm1try.ru",
+    "url": "https://idm1try.ru"
+  },
   "license": "MIT",
   "scripts": {
     "dev": "next dev",
@@ -22,8 +26,8 @@
     "@types/node": "18.7.9",
     "@types/react": "18.0.17",
     "@types/react-dom": "18.0.6",
-    "@typescript-eslint/eslint-plugin": "^5.47.0",
-    "@typescript-eslint/parser": "^5.47.0",
+    "@typescript-eslint/eslint-plugin": "^5.47.1",
+    "@typescript-eslint/parser": "^5.47.1",
     "autoprefixer": "^10.4.13",
     "eslint": "^8.30.0",
     "eslint-config-next": "^13.1.1",
