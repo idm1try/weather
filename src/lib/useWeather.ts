@@ -9,7 +9,7 @@ async function fetcher(url: string) {
 export default function useWeather(): WeatherData {
   const [location, setLocation] = useLocalStorage({
     key: 'location',
-    defaultValue: 'New York',
+    defaultValue: 'San Francisco',
   })
   const { data, error } = useSWR(
     `/api/weather?location=${location}&data=weather`,
