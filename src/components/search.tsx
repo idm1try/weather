@@ -1,5 +1,4 @@
 import useWeather from '@/lib/useWeather'
-import cn from '@/lib/classNames'
 
 const Search = () => {
   const { location, setLocation } = useWeather()
@@ -13,13 +12,7 @@ const Search = () => {
         spellCheck='false'
         value={location}
         onChange={event => setLocation(event.target.value)}
-        className={cn(
-          'rounded-lg bg-neutral-200 py-2 px-4',
-          'outline-none transition-colors',
-          'duration-300 placeholder:text-neutral-600',
-          'dark:placeholder:text-neutral-400',
-          'dark:bg-neutral-800'
-        )}
+        className='rounded-lg bg-neutral-200 py-2 px-4 outline-none transition-colors duration-300 placeholder:text-neutral-600 hover:bg-neutral-300/70 active:bg-neutral-300/50 dark:bg-neutral-800 dark:placeholder:text-neutral-400 dark:hover:bg-neutral-700/50 dark:active:bg-neutral-700/70'
       />
     </div>
   )
