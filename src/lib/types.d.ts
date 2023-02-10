@@ -110,6 +110,6 @@ export interface WeatherData {
   isLoading: boolean
   isLoadingForecast: boolean
   isError: boolean
-  location: string
+  location: string | undefined
   setLocation: (string) => void
 }
