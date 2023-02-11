@@ -64,7 +64,6 @@ export default function RootLayout({
       lang='en'
       className={`bg-neutral-50 font-sans text-neutral-900 antialiased selection:bg-neutral-200 dark:bg-[#111010] dark:text-neutral-100 dark:selection:bg-neutral-700 ${fontSans.variable}`}
     >
-      <head />
       <body>
         <div className='mx-auto max-w-3xl px-6 pb-20'>
           <main className='pt-6 sm:pt-16'>
