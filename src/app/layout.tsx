@@ -1,6 +1,6 @@
 import './global.css'
 import { AnalyticsProvider } from './analytics'
-import { Inter } from '@next/font/google'
+import { Inter } from 'next/font/google'
 
 const fontSans = Inter({ variable: '--font-sans' })
 
@@ -44,11 +44,11 @@ export const metadata = {
   icons: {
     icon: '/favicon.png',
     apple: 'apple-touch-icon.png',
-    other: [{ rel: 'manifest', url: '/site.webmanifest' }],
   },
   alternates: {
     canonical: 'https://weather.idm1try.ru/',
   },
+  manifest: '/site.webmanifest',
   other: {
     'darkreader-lock': '',
   },
