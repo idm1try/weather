@@ -1,10 +1,8 @@
-import { NextRequest } from 'next/server'
-
 export const config = {
   runtime: 'edge',
 }
 
-export default async function handler(req: NextRequest) {
+export async function GET(req: Request) {
   const { searchParams } = new URL(req.url)
   const location = searchParams.get('location') || ''
   const data = searchParams.get('data') || ''

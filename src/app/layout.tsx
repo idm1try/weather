@@ -1,5 +1,5 @@
 import './global.css'
-import { AnalyticsProvider } from './analytics'
+import { Analytics } from '@vercel/analytics/react'
 import { Inter } from 'next/font/google'
 
 const fontSans = Inter({ variable: '--font-sans' })
@@ -68,7 +68,7 @@ export default function RootLayout({
         <div className='mx-auto max-w-3xl px-6 pb-20'>
           <main className='pt-6 sm:pt-16'>
             {children}
-            <AnalyticsProvider />
+            <Analytics />
           </main>
         </div>
       </body>
