@@ -9,8 +9,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
+    "start": "next start"
   },
   "dependencies": {
     "@vercel/analytics": "^0.1.11",
@@ -25,9 +24,6 @@
     "@types/react": "18.0.17",
     "@types/react-dom": "18.0.6",
     "autoprefixer": "^10.4.14",
-    "eslint": "^8.37.0",
-    "eslint-config-next": "13.2.4",
-    "eslint-plugin-tailwindcss": "^3.10.1",
     "postcss": "^8.4.21",
     "prettier": "^2.8.7",
     "tailwindcss": "^3.3.0",
@@ -39,14 +35,5 @@
     "jsxSingleQuote": true,
     "proseWrap": "always",
     "semi": false
-  },
-  "eslintConfig": {
-    "plugins": [
-      "tailwindcss"
-    ],
-    "extends": [
-      "next",
-      "plugin:tailwindcss/recommended"
-    ]
   }
 }
