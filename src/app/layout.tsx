@@ -1,6 +1,7 @@
 import './global.css'
 import { Analytics } from '@vercel/analytics/react'
 import { Inter } from 'next/font/google'
+import { cn } from '@/lib/utils'
 
 const fontSans = Inter({ variable: '--font-sans' })
 
@@ -62,7 +63,12 @@ export default function RootLayout({
   return (
     <html
       lang='en'
-      className={`bg-neutral-50 font-sans text-neutral-900 antialiased selection:bg-neutral-200 dark:bg-[#111010] dark:text-neutral-100 dark:selection:bg-neutral-700 ${fontSans.variable}`}
+      className={cn(
+        'bg-neutral-50 font-sans text-neutral-900 antialiased',
+        'selection:bg-neutral-200 dark:bg-[#111010]',
+        'dark:text-neutral-100 dark:selection:bg-neutral-700',
+        fontSans.variable
+      )}
     >
       <body>
         <div className='mx-auto max-w-3xl px-6 pb-20'>
