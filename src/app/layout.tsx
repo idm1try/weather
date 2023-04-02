@@ -3,7 +3,7 @@ import { Analytics } from '@vercel/analytics/react'
 import { Inter } from 'next/font/google'
 import { cn } from '@/lib/utils'
 
-const fontSans = Inter({ variable: '--font-sans' })
+const fontSans = Inter({ variable: '--font-sans', subsets: ['latin'] })
 
 export const metadata = {
   title: 'Weather',
