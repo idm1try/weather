@@ -13,4 +13,9 @@ module.exports = {
   future: {
     hoverOnlyWhenSupported: true,
   },
+  plugins: [
+    require('@catppuccin/tailwindcss')({
+      defaultFlavour: 'latte',
+    }),
+  ],
 }

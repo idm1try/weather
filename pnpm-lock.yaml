@@ -1,6 +1,7 @@
 lockfileVersion: 5.4
 
 specifiers:
+  '@catppuccin/tailwindcss': ^0.1.1
   '@types/node': 18.7.9
   '@types/react': 18.0.17
   '@types/react-dom': 18.0.6
@@ -29,6 +30,7 @@ dependencies:
   tailwind-merge: 1.11.0
 
 devDependencies:
+  '@catppuccin/tailwindcss': 0.1.1_postcss@8.4.21
   '@types/node': 18.7.9
   '@types/react': 18.0.17
   '@types/react-dom': 18.0.6
@@ -46,6 +48,20 @@ packages:
     dependencies:
       regenerator-runtime: 0.13.11
     dev: false
+
+  /@catppuccin/palette/0.1.5:
+    resolution: {integrity: sha512-IQLsZwXDMpLc5CFGjIMa/gFnnFL/QLB280F11B51JweZHerZ/FgPXdIR4eQqn1CgrqI3wGfgnj1LVPx12DV/Uw==}
+    dev: true
+
+  /@catppuccin/tailwindcss/0.1.1_postcss@8.4.21:
+    resolution: {integrity: sha512-WWOzx8uOf3QPZ1HdVSkpgaqzMzrfYpOgAketQAQ7493eFhlYC4bJ1ViT5ukhwfhzuu3xnmke+Op2qjhHnyjt8g==}
+    dependencies:
+      '@catppuccin/palette': 0.1.5
+      tailwindcss: 3.3.1_postcss@8.4.21
+    transitivePeerDependencies:
+      - postcss
+      - ts-node
+    dev: true
 
   /@next/env/13.2.4:
     resolution: {integrity: sha512-+Mq3TtpkeeKFZanPturjcXt+KHfKYnLlX6jMLyCrmpq6OOs4i1GqBOAauSkii9QeKCMTYzGppar21JU57b/GEA==}
