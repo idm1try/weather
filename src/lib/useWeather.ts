@@ -12,11 +12,11 @@ export default function useWeather(): WeatherData {
   const [location, setLocation] = useLocalStorage<string>('location')
   const { data, error } = useSWR(
     `/weather?location=${location}&data=weather`,
-    fetcher
+    fetcher,
   )
   const { data: forecastData, error: forecastError } = useSWR(
     `/weather?location=${location}&data=forecast`,
-    fetcher
+    fetcher,
   )
 
   return {

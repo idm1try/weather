@@ -1,7 +1,7 @@
 import './global.css'
+import { cn } from '@/lib/utils'
 import { Analytics } from '@vercel/analytics/react'
 import { Inter } from 'next/font/google'
-import { cn } from '@/lib/utils'
 
 const fontSans = Inter({ variable: '--font-sans', subsets: ['latin'] })
 
@@ -26,8 +26,7 @@ export const metadata = {
     creator: '@idm1try',
     card: 'summary_large_image',
     description: 'View your weather',
-    images:
-      'https://idm1try.ru/api/og?heading=Weather&desc=View%20your%20weather',
+    images: 'https://idm1try.ru/api/og?heading=Weather&desc=View%20your%20weather',
   },
   openGraph: {
     title: {
@@ -39,8 +38,7 @@ export const metadata = {
     locale: 'en-US',
     type: 'website',
     url: 'https://weather.idm1try.ru/',
-    images:
-      'https://idm1try.ru/api/og?heading=Weather&desc=View%20your%20weather',
+    images: 'https://idm1try.ru/api/og?heading=Weather&desc=View%20your%20weather',
   },
   icons: {
     icon: '/favicon.png',
@@ -66,7 +64,7 @@ export default function RootLayout({
       className={cn(
         'scroll-smooth font-sans text-text bg-base',
         'antialiased selection:bg-surface1 dark:mocha',
-        fontSans.variable
+        fontSans.variable,
       )}
     >
       <body>

@@ -8,7 +8,7 @@ export async function GET(req: Request) {
   const data = searchParams.get('data') || ''
 
   const weather = await fetch(
-    `https://api.openweathermap.org/data/2.5/${data}?q=${location}&units=metric&cnt=8&appid=${process.env.WEATHER_API_KEY}`
+    `https://api.openweathermap.org/data/2.5/${data}?q=${location}&units=metric&cnt=8&appid=${process.env.WEATHER_API_KEY}`,
   )
 
   const forecast = await weather.json()

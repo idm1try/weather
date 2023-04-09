@@ -1,7 +1,7 @@
 'use client'
 
-import useWeather from '@/lib/useWeather'
 import { formatTemperature, formatTime } from '@/lib/formatters'
+import useWeather from '@/lib/useWeather'
 import { cn } from '@/lib/utils'
 
 const Weather = () => {
@@ -21,7 +21,7 @@ const Weather = () => {
           'py-2 px-4 capitalize text-subtext0 shadow-sm',
           'outline-none transition-all duration-300',
           'placeholder:text-overlay0 hover:text-subtext1',
-          'focus:ring-2 ring-surface1 ring-offset-2 ring-offset-base'
+          'focus:ring-2 ring-surface1 ring-offset-2 ring-offset-base',
         )}
       />
       {!isLoading && !weather.message && weather.cod !== '404' && (
@@ -33,8 +33,8 @@ const Weather = () => {
             <h1 className='my-3 text-5xl font-bold'>
               {formatTemperature(weather.main.temp)}
             </h1>
-            {formatTemperature(weather.main.feels_like) !==
-              formatTemperature(weather.main.temp) && (
+            {formatTemperature(weather.main.feels_like)
+                !== formatTemperature(weather.main.temp) && (
               <p className='mb-5 text-overlay0'>
                 Feels Like: {formatTemperature(weather.main.feels_like)}
               </p>

@@ -9,7 +9,7 @@ export interface WeatherResponse {
       main: string
       description: string
       icon: string
-    }
+    },
   ]
   base: string
   main: {
@@ -68,7 +68,7 @@ export interface ForecastResponse {
           main: string
           description: string
           icon: string
-        }
+        },
       ]
       clouds: {
         all: number
@@ -87,7 +87,7 @@ export interface ForecastResponse {
         pod: string
       }
       dt_txt: string
-    }
+    },
   ]
   city: {
     id: number
