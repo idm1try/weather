@@ -6,6 +6,7 @@ import { Inter } from 'next/font/google'
 const fontSans = Inter({ variable: '--font-sans', subsets: ['latin'] })
 
 export const metadata = {
+  metadataBase: new URL('https://weather.idm1try.ru'),
   title: 'Weather',
   themeColor: '#1e1e2e',
   description: 'View your weather',
