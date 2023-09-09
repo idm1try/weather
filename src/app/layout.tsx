@@ -6,9 +6,9 @@ import { Inter } from 'next/font/google'
 const fontSans = Inter({ variable: '--font-sans', subsets: ['latin'] })
 
 export const metadata = {
-  metadataBase: new URL('https://weather.idm1try.ru'),
+  metadataBase: new URL('https://nxwtr.vercel.app'),
   title: 'Weather',
-  themeColor: '#1e1e2e',
+  themeColor: '#111010',
   description: 'View your weather',
   robots: {
     index: true,
@@ -27,7 +27,7 @@ export const metadata = {
     creator: '@idm1try',
     card: 'summary_large_image',
     description: 'View your weather',
-    images: 'https://idm1try.ru/api/og?heading=Weather&desc=View%20your%20weather',
+    images: 'https://idm1try.vercel.app/api/og?heading=Weather&desc=View%20your%20weather',
   },
   openGraph: {
     title: {
@@ -38,15 +38,15 @@ export const metadata = {
     siteName: 'Weather',
     locale: 'en-US',
     type: 'website',
-    url: 'https://weather.idm1try.ru/',
-    images: 'https://idm1try.ru/api/og?heading=Weather&desc=View%20your%20weather',
+    url: 'https://nxwtr.vercel.app/',
+    images: 'https://nxwtr.vercel.app/api/og?heading=Weather&desc=View%20your%20weather',
   },
   icons: {
     icon: '/favicon.png',
     apple: 'apple-touch-icon.png',
   },
   alternates: {
-    canonical: 'https://weather.idm1try.ru/',
+    canonical: 'https://nxwtr.vercel.app/',
   },
   manifest: '/site.webmanifest',
   other: {
@@ -63,8 +63,9 @@ export default function RootLayout({
     <html
       lang='en'
       className={cn(
-        'scroll-smooth font-sans text-text bg-base',
-        'antialiased selection:bg-surface1 dark:mocha',
+        'bg-neutral-50 font-sans text-neutral-900 antialiased',
+        'selection:bg-neutral-200 dark:bg-[#111010]',
+        'dark:text-neutral-100 dark:selection:bg-neutral-700',
         fontSans.variable,
       )}
     >
