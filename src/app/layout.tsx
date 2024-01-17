@@ -1,14 +1,19 @@
 import './global.css'
 import { cn } from '@/lib/utils'
-import { Analytics } from '@vercel/analytics/react'
 import { Inter } from 'next/font/google'
 
 const fontSans = Inter({ variable: '--font-sans', subsets: ['latin'] })
 
+export const viewport = {
+  themeColor: '#111010',
+  initialScale: 1,
+  maximumScale: 1,
+  userScalable: 1,
+}
+
 export const metadata = {
   metadataBase: new URL('https://nxwtr.vercel.app'),
   title: 'Weather',
-  themeColor: '#111010',
   description: 'View your weather',
   robots: {
     index: true,
@@ -73,7 +78,6 @@ export default function RootLayout({
         <div className='mx-auto max-w-3xl px-6 pb-20'>
           <main className='pt-6 sm:pt-16'>
             {children}
-            <Analytics />
           </main>
         </div>
       </body>
