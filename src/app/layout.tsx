@@ -5,7 +5,7 @@ import { Inter } from 'next/font/google'
 const fontSans = Inter({ variable: '--font-sans', subsets: ['latin'] })
 
 export const viewport = {
-  themeColor: '#111010',
+  themeColor: '#161616',
   initialScale: 1,
   maximumScale: 1,
   userScalable: 1,
@@ -68,9 +68,8 @@ export default function RootLayout({
     <html
       lang='en'
       className={cn(
-        'bg-neutral-50 font-sans text-neutral-900 antialiased',
-        'selection:bg-neutral-200 dark:bg-[#111010]',
-        'dark:text-neutral-100 dark:selection:bg-neutral-700',
+        'scroll-smooth font-sans text-text bg-base',
+        'antialiased selection:bg-surface1',
         fontSans.variable,
       )}
     >
