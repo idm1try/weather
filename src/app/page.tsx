@@ -17,10 +17,10 @@ const Weather = () => {
         value={location}
         onChange={event => setLocation(event.target.value)}
         className={cn(
-          'rounded-lg border border-surface1 bg-base',
+          'rounded-lg border border-surface0 bg-base',
           'py-2 px-4 capitalize shadow-sm',
           'outline-none transition-colors duration-300',
-          'placeholder:text-overlay0 hover:border-surface2',
+          'placeholder:text-overlay0 hover:border-surface1',
           'focus:text-text focus:border-surface2',
         )}
       />
