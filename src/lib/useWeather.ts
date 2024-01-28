@@ -11,11 +11,11 @@ async function fetcher(url: string) {
 export default function useWeather(): WeatherData {
   const [location, setLocation] = useLocalStorage<string>('location')
   const { data, error } = useSWR(
-    `/weather?location=${location}&data=weather`,
+    `/weather?location=${location?.trimEnd()}&data=weather`,
     fetcher,
   )
   const { data: forecastData, error: forecastError } = useSWR(
-    `/weather?location=${location}&data=forecast`,
+    `/weather?location=${location?.trimEnd()}&data=forecast`,
     fetcher,
   )
 

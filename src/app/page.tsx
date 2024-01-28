@@ -46,7 +46,7 @@ const Weather = () => {
                 <span className='text-overlay0 sm:w-20'>
                   {formatTime(weather.sys.sunrise)}
                 </span>
-                <span className='font-medium'>Sunrise</span>
+                <span className='font-semibold'>Sunrise</span>
               </div>
             </li>
             <li className='pr-4 transition-all duration-300'>
@@ -54,7 +54,7 @@ const Weather = () => {
                 <span className='text-overlay0 sm:w-20'>
                   {formatTime(weather.sys.sunset)}
                 </span>
-                <span className='font-medium'>Sunset</span>
+                <span className='font-semibold'>Sunset</span>
               </div>
             </li>
             {forecast?.list?.map(forecast => (
@@ -66,7 +66,7 @@ const Weather = () => {
                   <span className='text-overlay0 sm:w-20'>
                     {formatTime(forecast.dt)}
                   </span>
-                  <span className='font-medium sm:w-12'>
+                  <span className='font-semibold sm:w-12'>
                     {formatTemperature(forecast.main.temp)}
                   </span>
                   <span className='capitalize'>

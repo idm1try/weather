@@ -1,17 +1,62 @@
 import './global.css'
 import { cn } from '@/lib/utils'
-import { Inter } from 'next/font/google'
+import { Metadata, Viewport } from 'next'
+import localFont from 'next/font/local'
 
-const fontSans = Inter({ variable: '--font-sans', subsets: ['latin'] })
+const cartographCF = localFont({
+  variable: '--font-cartographcf',
+  src: [
+    {
+      path: '../../public/fonts/CartographCF-Regular.woff2',
+      weight: '400',
+      style: 'normal',
+    },
+    {
+      path: '../../public/fonts/CartographCF-RegularItalic.woff2',
+      weight: '400',
+      style: 'italic',
+    },
+    {
+      path: '../../public/fonts/CartographCF-Bold.woff2',
+      weight: '600',
+      style: 'normal',
+    },
+    {
+      path: '../../public/fonts/CartographCF-BoldItalic.woff2',
+      weight: '600',
+      style: 'italic',
+    },
+    {
+      path: '../../public/fonts/CartographCF-ExtraBold.woff2',
+      weight: '700',
+      style: 'normal',
+    },
+    {
+      path: '../../public/fonts/CartographCF-ExtraBoldItalic.woff2',
+      weight: '700',
+      style: 'italic',
+    },
+    {
+      path: '../../public/fonts/CartographCF-Heavy.woff2',
+      weight: '800',
+      style: 'normal',
+    },
+    {
+      path: '../../public/fonts/CartographCF-HeavyItalic.woff2',
+      weight: '800',
+      style: 'italic',
+    },
+  ],
+})
 
-export const viewport = {
+export const viewport: Viewport = {
   themeColor: '#161616',
   initialScale: 1,
   maximumScale: 1,
-  userScalable: 1,
+  userScalable: true,
 }
 
-export const metadata = {
+export const metadata: Metadata = {
   metadataBase: new URL('https://nxwtr.vercel.app'),
   title: 'Weather',
   description: 'View your weather',
@@ -70,11 +115,11 @@ export default function RootLayout({
       className={cn(
         'scroll-smooth font-sans text-text bg-base',
         'antialiased selection:bg-surface1',
-        fontSans.variable,
+        cartographCF.variable,
       )}
     >
       <body>
-        <div className='mx-auto max-w-3xl px-6 pb-20'>
+        <div className='mx-auto max-w-[850px] px-6 pb-20'>
           <main className='pt-6 sm:pt-16'>
             {children}
           </main>
