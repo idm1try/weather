@@ -54,6 +54,10 @@
   -webkit-tap-highlight-color: transparent;
 }
 
+.underlined {
+ @apply underline decoration-surface2 decoration-2 underline-offset-4 transition-colors duration-300 hover:decoration-overlay2 active:decoration-overlay1;
+}
+
 @media (hover: hover) and (pointer: fine) {
   .animated-list:hover li {
     opacity: 0.5;
