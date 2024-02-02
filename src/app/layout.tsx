@@ -18,32 +18,32 @@ const cartographCF = localFont({
     },
     {
       path: '../../public/fonts/CartographCF-Bold.woff2',
-      weight: '600',
+      weight: '700',
       style: 'normal',
     },
     {
       path: '../../public/fonts/CartographCF-BoldItalic.woff2',
-      weight: '600',
+      weight: '700',
       style: 'italic',
     },
     {
       path: '../../public/fonts/CartographCF-ExtraBold.woff2',
-      weight: '700',
+      weight: '800',
       style: 'normal',
     },
     {
       path: '../../public/fonts/CartographCF-ExtraBoldItalic.woff2',
-      weight: '700',
+      weight: '800',
       style: 'italic',
     },
     {
       path: '../../public/fonts/CartographCF-Heavy.woff2',
-      weight: '800',
+      weight: '900',
       style: 'normal',
     },
     {
       path: '../../public/fonts/CartographCF-HeavyItalic.woff2',
-      weight: '800',
+      weight: '900',
       style: 'italic',
     },
   ],
@@ -57,7 +57,7 @@ export const viewport: Viewport = {
 }
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://nxwtr.vercel.app'),
+  metadataBase: new URL('https://weather.idm1try.dev'),
   title: 'Weather',
   description: 'View your weather',
   robots: {
@@ -77,7 +77,7 @@ export const metadata: Metadata = {
     creator: '@idm1try',
     card: 'summary_large_image',
     description: 'View your weather',
-    images: 'https://idm1try.vercel.app/api/og?heading=Weather&desc=View%20your%20weather',
+    images: 'https://idm1try.dev/api/og?heading=Weather&desc=View%20your%20weather',
   },
   openGraph: {
     title: {
@@ -88,15 +88,15 @@ export const metadata: Metadata = {
     siteName: 'Weather',
     locale: 'en-US',
     type: 'website',
-    url: 'https://nxwtr.vercel.app/',
-    images: 'https://nxwtr.vercel.app/api/og?heading=Weather&desc=View%20your%20weather',
+    url: 'https://weather.idm1try.dev/',
+    images: 'https://idm1try.dev/api/og?heading=Weather&desc=View%20your%20weather',
   },
   icons: {
     icon: '/favicon.png',
     apple: 'apple-touch-icon.png',
   },
   alternates: {
-    canonical: 'https://nxwtr.vercel.app/',
+    canonical: 'https://weather.idm1try.dev/',
   },
   manifest: '/site.webmanifest',
   other: {
@@ -114,7 +114,7 @@ export default function RootLayout({
       lang='en'
       className={cn(
         'scroll-smooth font-sans text-text bg-base',
-        'antialiased selection:bg-surface1',
+        'antialiased selection:bg-surface1 leading-relaxed',
         cartographCF.variable,
       )}
     >
