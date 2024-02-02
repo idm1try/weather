@@ -41,7 +41,7 @@ const Weather = () => {
             )}
           </div>
           <ul className='animated-list grid grid-cols-2'>
-            <li className='pr-4 transition-all duration-300'>
+            <li className='pr-4'>
               <div className='flex flex-col gap-1 py-3 sm:flex-row md:gap-9'>
                 <span className='text-overlay0 sm:w-20'>
                   {formatTime(weather.sys.sunrise)}
@@ -49,7 +49,7 @@ const Weather = () => {
                 <span className='font-semibold'>Sunrise</span>
               </div>
             </li>
-            <li className='pr-4 transition-all duration-300'>
+            <li className='pr-4'>
               <div className='flex flex-col gap-1 py-3 sm:flex-row md:gap-9'>
                 <span className='text-overlay0 sm:w-20'>
                   {formatTime(weather.sys.sunset)}
@@ -60,7 +60,7 @@ const Weather = () => {
             {forecast?.list?.map(forecast => (
               <li
                 key={forecast.dt}
-                className='pr-4 transition-all duration-300'
+                className='pr-4'
               >
                 <div className='flex flex-col gap-1 py-3 sm:flex-row md:gap-9'>
                   <span className='text-overlay0 sm:w-20'>

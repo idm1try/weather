@@ -3,7 +3,7 @@ import { cn } from '@/lib/utils'
 import { Metadata, Viewport } from 'next'
 import localFont from 'next/font/local'
 
-const cartographCF = localFont({
+const cartographcf = localFont({
   variable: '--font-cartographcf',
   src: [
     {
@@ -73,8 +73,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     title: 'Weather',
-    site: '@idm1try',
-    creator: '@idm1try',
     card: 'summary_large_image',
     description: 'View your weather',
     images: 'https://idm1try.dev/api/og?heading=Weather&desc=View%20your%20weather',
@@ -115,7 +113,7 @@ export default function RootLayout({
       className={cn(
         'scroll-smooth font-sans text-text bg-base',
         'antialiased selection:bg-surface1 leading-relaxed',
-        cartographCF.variable,
+        cartographcf.variable,
       )}
     >
       <body>
