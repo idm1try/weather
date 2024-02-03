@@ -118,7 +118,7 @@ export default function RootLayout({
     >
       <body>
         <div className='mx-auto max-w-[850px] px-6 pb-20'>
-          <main className='pt-6 sm:pt-16'>
+          <main className='pt-6 min-[950px]:pt-16'>
             {children}
           </main>
         </div>
